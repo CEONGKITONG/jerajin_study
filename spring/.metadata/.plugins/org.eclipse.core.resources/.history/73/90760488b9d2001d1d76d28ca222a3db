@@ -1,0 +1,12 @@
+package org.zerock.board.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class BoardController {
+	
+	public String list() {
+		return "board/list";
+	}
+
+}
