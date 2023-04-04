@@ -7,5 +7,6 @@ jerajinsolution study repo
    - JDK : 1.8
    - Tomcat : 9.0.x
    - Maven : 3.8.x
+   - Lombok : 1.18.2
    - 과제물 제출 : Github
    - 과제물 업로드 : GitHubDesktop
