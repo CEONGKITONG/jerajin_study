@@ -1,0 +1,73 @@
+[ Webjjang Spring ver.2023.03 ]
+
+1. 과제 진행 상태 점검
+2. 환경 설정
+	- Spring Tool Suite 4
+	- JDK : 1.8
+	- Tomcat : 9.0.x
+	- Maven : 3.8.x
+	- 과제물 제출 : Github
+	- 과제물 업로드 : GitHubDesktop
+3. Git Commit comment에 진행항 강좌 이름 기재
+    - init 업로드
+    [ 진행 내용 ]
+     Webjjang Spring ver.2023.03 01-01
+     Webjjang Spring ver.2023.03 01-02 
+     Webjjang Spring ver.2023.03 01-03
+
+
+
+
+
+1. Webjjang Spring ver.2023.03 01-05 개발 환경 구축 - Lombok 라이브러리 확인하기(웹짱과 함께하는 스프링)
+
+Lombok         : 기본 생성자 + Getter + Setter + Tostring 를 기본적으로 만들어준다. (주로 도메인 객체(VO 객체)에 사용)
+				날짜 형식 데이터를 받을 때 편하다. (캐스팅 신경쓰지 않아도 된다. Date 객체 사용 편함)
+Log4j          : Logger 객체 생성 필요
+Lombok + Log4j : Logger 객체 생성 선언 없이 Lombom 어노테이션으로 파일 로깅 가능
+
+
+2. Webjjang Spring ver.2023.03 02-01 객체 생성과 DI 적용(웹짱과 함께하는 스프링)
+Spring 자동 생성 어노테이션 => 설정이 되어야한다.  (
+	url 이랑 연결이 필요한 경우 설정 : servlet-context.xml
+	url 이랑 연결이 필요없는 경우 : root-context.xml
+	- Controller	: URL 이 필요할 때 사용
+	- Component : Spring 프레임워크의 구성
+	- Service	
+	- Repository : DAO 해당되는 속성, DB랑 연동 (메인 메모리가 아닌 저장소에 저장되어 있는 경우)
+	- RestController : REST, AJAX 등	=> 데이터를 그대로 보낼때 사용
+	- Advice			: 예외 처리
+	
+3. Webjjang Spring ver.2023.03 02-02 객체 생성과 JUnit으로 테스팅하기(웹짱과 함께하는 스프링)
+@RunWith    : 지정된 Class를 같이 실행
+@ContextConfiguration : web.xml 에 ContextConfiguration 처럼 지정된 설정 파일을 사용
+@Test		: 테스트 대상 메서드
+
+
+4. Webjjang Spring ver.2023.03 02-03 게시판 객체 생성과 DI 적용과 테스트(웹짱과 함께하는 스프링)
+Spring 자동 생성 어노테이션 - @Controller, @Component, @Service, @Repository, @RestController, @Advice
+BoardController - BoardServiceImpl - BoardDAO
+DI 를 위해 Lombok 의 Setter 사용 (@Setter(onMethod_ = @Autowired))
+
+5.
+	(@Setter(onMethod_ = @Autowired))
+	
+	
+[4/	6]
+Webjjang Spring ver.2023.03 03-01 오라클 JDBC 연결과 테스트(웹짱과 함께하는 스프링)	
+
+*. Oracle XE 설치 시 롤백 오류 현상 발생시
+
+ - 윈도우 사용자명이 한글이 아닌 영문으로 되어야함
+   기존 한글 사용자이름으로 되어있을 경우 윈도우에 새 계정 추가해서 영문 계정으로 등록해야함
+	Windows 로고키 + R키 -> netplwiz  -> 추가 -> 윈도우 재부팅 -> 추가된 계정으로 로그인 -> Oracle 설치
+   관련 참조 : https://answers.microsoft.com/ko-kr/windows/forum/all/windows-10-%ec%97%90%ec%84%9c/ebb6ad55-e69c-45a2-a194-ab38d6fd69c3
+ - PC 이름이 15자 이하의 영문자로 되어야함
+
+    기타 설치 관련 참조 내용 https://velog.io/@ynjch97/Oracle-%EC%98%A4%EB%9D%BC%ED%81%B4-Database-11g-%EC%A0%91%EC%86%8D-%EC%98%A4%EB%A5%98-%EB%B0%8F-%EC%84%A4%EC%B9%98-%EC%82%AD%EC%A0%9C
+                     https://forums.oracle.com/ords/apexds/post/can-t-install-oracle-database-xe-4205
+
+*. tomcat 실행 시 오류 발생 
+  Caused by: java.lang.IllegalArgumentException: 지정된 주요 리소스셋 [C:\jerajin_study\spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ex00]은(는) 유효하지 않습니다.
+  Mavent update 로 해결
+  또는 workspace 가 다른 곳을 보고 있는지 확인
