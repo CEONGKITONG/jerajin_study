@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class DataSourceTest {
 	@Setter(onMethod_ = @Autowired)
 	private DataSource dataSource;
 	
+	@Setter(onMethod_ = @Autowired)
+	private SqlSessionFactory sqlSessionFactory;
+	
 	@Test
 	public void testConnection() {
 		// try (객체 선언 생성) { ~~ } catch () {~~~}   => 객체 자동 닫기 
@@ -34,6 +39,25 @@ public class DataSourceTest {
 			ResultSet rs = psmt.executeQuery();
 			rs.next();
 			log.info(rs.getString(1));
+			log.info(con);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	@Test
+	public void testMyBatis() {
+		// try (객체 선언 생성) { ~~ } catch () {~~~}   => 객체 자동 닫기 
+		try (SqlSession session = sqlSessionFactory.openSession();
+				Connection con = dataSource.getConnection()
+						){
+			
+			log.info(session);
+			String sql = "SELECT SYSDATE FROM DUAL";
+			PreparedStatement psmt = con.prepareStatement(sql);
+			ResultSet rs = psmt.executeQuery();
+			rs.next();
+			log.info(rs.getString(1));			
 			log.info(con);
 		} catch (Exception e) {
 			// TODO: handle exception
