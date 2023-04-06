@@ -16,7 +16,10 @@
      Webjjang Spring ver.2023.03 01-03
 
 
-
+[ Spring 관련 사이트 ]
+https://central.sonatype.com/   : Libray 다움을 위한 Maven  설정
+https://projectlombok.org/
+https://www.toptal.com/developers/gitignore   : ignore 설정 자동 생성
 
 
 1. Webjjang Spring ver.2023.03 01-05 개발 환경 구축 - Lombok 라이브러리 확인하기(웹짱과 함께하는 스프링)
@@ -54,7 +57,7 @@ DI 를 위해 Lombok 의 Setter 사용 (@Setter(onMethod_ = @Autowired))
 	
 	
 [4/	6]
-Webjjang Spring ver.2023.03 03-01 오라클 JDBC 연결과 테스트(웹짱과 함께하는 스프링)	
+6. Webjjang Spring ver.2023.03 03-01 오라클 JDBC 연결과 테스트(웹짱과 함께하는 스프링)	
 
 *. Oracle XE 설치 시 롤백 오류 현상 발생시
 
@@ -67,7 +70,26 @@ Webjjang Spring ver.2023.03 03-01 오라클 JDBC 연결과 테스트(웹짱과 �
     기타 설치 관련 참조 내용 https://velog.io/@ynjch97/Oracle-%EC%98%A4%EB%9D%BC%ED%81%B4-Database-11g-%EC%A0%91%EC%86%8D-%EC%98%A4%EB%A5%98-%EB%B0%8F-%EC%84%A4%EC%B9%98-%EC%82%AD%EC%A0%9C
                      https://forums.oracle.com/ords/apexds/post/can-t-install-oracle-database-xe-4205
 
+
+
 *. tomcat 실행 시 오류 발생 
   Caused by: java.lang.IllegalArgumentException: 지정된 주요 리소스셋 [C:\jerajin_study\spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ex00]은(는) 유효하지 않습니다.
   Mavent update 로 해결
   또는 workspace 가 다른 곳을 보고 있는지 확인
+  
+  
+*. 12c 이후 사용자 생성
+		https://hec-ker.tistory.com/97
+  
+  
+7. Webjjang Spring ver.2023.03 03-02 DBCP 연결(웹짱과 함께하는 스프링)  
+ - Connection Pool : Connection 연결 시간이 오래 걸리니 미리 만들어서 저장해놓자
+ - HikariCP : JDBC Connection Pool Library
+ 
+ pom.xml에 내용 추가 후 ctrl + shift + f 키를 누르면 자동 formmatting 된다 (eclipse 용)
+ 
+ ~conext.xml 설정 
+   property 태그는 객체 setter 로 데이터 설정하는 것 name : setter 명, value : 넘길 값
+   
+ - JDBC 객체 생성
+	HikariCP Connection Pool 객체 생성 -> Connectio Pool 객체를 DataSource 객체에 넣어서 Datasource 객체를 만든다. 이후 Datasource 객체를 사용
