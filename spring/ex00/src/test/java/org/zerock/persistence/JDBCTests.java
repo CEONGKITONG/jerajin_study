@@ -20,7 +20,7 @@ public class JDBCTests {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			log.info("드라이버 확인");
 			//2. 연결
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "JAVA_TEST", "JAVA_TEST");
 			log.info("연결 성공");
 		} catch (Exception e) {
 			// TODO: handle exception
