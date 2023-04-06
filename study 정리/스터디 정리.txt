@@ -93,3 +93,14 @@ DI 를 위해 Lombok 의 Setter 사용 (@Setter(onMethod_ = @Autowired))
    
  - JDBC 객체 생성
 	HikariCP Connection Pool 객체 생성 -> Connectio Pool 객체를 DataSource 객체에 넣어서 Datasource 객체를 만든다. 이후 Datasource 객체를 사용
+	
+	
+	
+8. Webjjang Spring ver.2023.03 03-03 DBCP 테스트(웹짱과 함께하는 스프링)
+  - try (Connection con = dataSource.getConnection()){
+     => <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">  
+	 => 위 destroy-method 설정으로 인해 con 객체 종료 시 data close 처리 된다.
+	 => try (객체 선언 생성) { ~~ } catch () {~~~}   => 객체 자동 닫기 
+  -  Connection 하나당 Oracle 서버의 프로세스 한개 (1:1)
+  -  개발자 개별로 Connection Pool 을 구성하여 사용 시 Oracle 서버의 Connection 프로세스가 1:1 생성된다
+  -  Oracle 서버 Connection 프로세스 부족 시 Oracle에서 프로세스 생성 갯수 변경 필요
