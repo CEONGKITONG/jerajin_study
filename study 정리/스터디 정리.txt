@@ -53,7 +53,11 @@ BoardController - BoardServiceImpl - BoardDAO
 DI 를 위해 Lombok 의 Setter 사용 (@Setter(onMethod_ = @Autowired))
 
 5.
-	(@Setter(onMethod_ = @Autowired))
+	Class A {
+		@Setter(onMethod_ = @Autowired)
+		B b;
+	}
+	=> 실행 중에 Spring 이 해당 B Class 로 된 객체를 생성하여 b 객체 변숭에 할당해준다. (Spring DI)
 	
 	
 [4/	6]
@@ -127,3 +131,24 @@ DI 를 위해 Lombok 의 Setter 사용 (@Setter(onMethod_ = @Autowired))
 	
 	
   - DAO 를 만들지 않고 sqlSession 을 사용한다. 완전 자동화를 위하여...
+  - sqlSession.insert, sqlSession.update, sqlSession.delete  등으로 해서 외부에 작성한 sql을 실행할 수 있다.
+
+  
+  
+10. Webjjang Spring ver.2023.03 04-02 MyBatis의 Mapper 방식으로 SQL 처리하기(웹짱과 함께하는 스프링)  
+	- 실행할 SQL 을 지정
+		1. XML (mapper) 에 지정할 수 있다		: 복잡한 SQL 을 실행할때
+		2. 어노테이션에 지정할 수 있다.  : 간단한 SQL 을 실행할때
+		
+	- <mybatis-spring:scan base-package="org.zerock"/>
+		: org.zerock 하위 패키지를 모든 mybatis mapper 설정을 scan 하여사용한다.
+	- <context:component-scan	base-package="org.zerock"/>
+		: org.zerock 하위 패키지의 모든 spring 설정을 scan 하여 사용한다.
+		
+	- @Select  어노테이션 : 함수에서 간단한 SQL 을 사용할 경우 사용
+	
+	public class TimeMapperTest {
+	
+	@Setter(onMethod_ = @Autowired)
+	private TimeMapper  timeMapper;
+	=> Spring 에서 TimeMapper 인터페이스의 객체를 생성하여 timeMapper 에 할당한다.
