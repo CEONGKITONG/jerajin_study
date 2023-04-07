@@ -12,6 +12,9 @@
 <a href="list.do">리스트</a>
 <div>
 <form action="delete.do" method="post">
+	<input name="no" value="1">
+	<input name="no" value="2">
+	<input name="no" value="3">
 	<button>삭제</button>
 </form>
 </div>

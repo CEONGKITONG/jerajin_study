@@ -314,3 +314,11 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		http://localhost/board/view.do?no=1&inc=1
 		=> method 의 파라미터 명과 url의 파라미터명이 일치해야한다.
 	- 수정 폼 처리 시 spring이 파라미터를 vo 객체로 자동으로 생성해준다.
+	
+	
+	
+18. Webjjang Spring ver.2023.03 06-04 같은 이름의 데이터 여러 개를 받아내기(웹짱과 함께하는 스프링)
+	- 같은 이름 여러개받을때 list나 배열로 받는다. (input tag에서 동일한 name으로 사용)
+	- public String delete(@RequestParam("no") List<Long> bno) {
+	  =>@RequestParam 는 요청하는 파라미터와 메서트가 받는 파라미터가 이름이 다를 경우에 변환해서 사용하기 위해 사용
+    - public String delete(@RequestParam("no") List<Long> no) {  => List 로 받아야할 경우는 @RequestParam 를 사용해야 오류가 나지 않는다.

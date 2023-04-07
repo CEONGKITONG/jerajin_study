@@ -1,9 +1,13 @@
 package org.zerock.board.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.zerock.board.vo.BoardVO;
 
 import lombok.extern.log4j.Log4j;
@@ -61,8 +65,13 @@ public class BoardController {
 
 	
 	@PostMapping("/delete.do")
-	public String delete() {
+	// @RequestParam(name, defaultValue, required, value) - 넘어오는 데이터의 ㅇ이름이 변수와 다른 경우, 값이 넘어오지 않는 경우 기본값, 필수항목, 값 세팅
+	// 여러개의 데이터를 List 로 받으면 Class 를 사용해야한다.
+	public String delete(@RequestParam("no") List<Long> no) {
+//	public String delete(long[] no) {
 		log.info("게시판 글 삭제 처리................................");
+//		log.info(Arrays.toString(no));
+		log.info(no);
 		return "redirect:list.do";
 	}
 	
