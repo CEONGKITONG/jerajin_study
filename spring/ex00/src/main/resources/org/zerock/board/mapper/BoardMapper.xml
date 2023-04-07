@@ -7,4 +7,9 @@
   	<select id="list" resultType="org.zerock.board.vo.BoardVO">
   		SELECT NO, TITLE, WRITER, WRITEDATE, HIT FROM BOARD
   	</select>
+  	
+  	<select id="view" resultType="org.zerock.board.vo.BoardVO">
+  		SELECT NO, TITLE, WRITER, WRITEDATE, HIT FROM BOARD
+  		WHERE NO = #{no}
+  	</select>  	
   </mapper>

@@ -199,3 +199,59 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		<level value="warn" />		
 		=> name : log 상에 출력 조정해야할 대상
 		   level  value = info, warn
+		   
+		   
+14. Webjjang Spring ver.2023.03 05-01 Spring WebMVC 기본 구조(웹짱과 함께하는 스프링)		   
+	- localhost/??? 로 실행하기 위해서 Server 의 tomcat 속성에서 overview -> port 에서 8080 -> 80으로 변경, Modules 에서 path 를 / 로 설정
+	
+	web.xml 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	=> url 과 상관 없는 경우 참조해야할 설정
+	
+	
+	
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	=> url 과 상관 있는 경우 설정
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	=> 모든 url 모두 잡아서 사용하겠다는 의미
+	
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+	=> / url 로 들어오는 경우 실행해야할 method 정의
+	
+	/ex01/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
+	<context:component-scan base-package="org.zerock.controller" />
+	=> org.zerock.controller 하위의 class 에 대한 객체는 자동 생성하겠다는 의미
+	
+	// 자동 생성 어노테이션 - @Coontroller, @Service, @Repository, @Component, @RestController, @Advice
+	// @Coontroller - servlet-context.xml 에 선언, 그 외 어노테이션 - root-context.xml에 선언
+	@Coontroller : url 과 맵핑된 class 중에서 자동 생성되어야하는 class 의 경우
+	@Service     : Biz Logic 같은 class 같이 자동생성해야하는 경우
+	@Repository  : DAO와 같은 데이터 보관하는 class 같이 자동 생성해야하는 경우
+	@Component   : 애매한 class 인데 자동생성되어야하는 경우
+	@RestController : 데이터 그대로 보내는 class
+	@Advice : 예외 처리
+	
+	
+	
+	Lombok 을 사용하지 않을 경우
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	Lombok 을 사용하는 경우 로깅 객체  생성
+	@Log4j

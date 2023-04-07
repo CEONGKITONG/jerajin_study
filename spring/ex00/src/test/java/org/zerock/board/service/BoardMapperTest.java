@@ -27,4 +27,11 @@ public class BoardMapperTest {
 		
 	}
 	
+	@Test
+	public void testView() {
+		log.info("\nMapper 테스트 ..................................");
+		log.info(mapper.view((long)1));
+		
+	}	
+	
 }

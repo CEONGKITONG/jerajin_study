@@ -7,4 +7,6 @@ import org.zerock.board.vo.BoardVO;
 public interface BoardMapper {
 
 	public List<BoardVO> list();
+	
+	public List<BoardVO> view(Long no);
 }
