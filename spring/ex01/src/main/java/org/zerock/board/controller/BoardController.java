@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.zerock.board.vo.BoardVO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -22,8 +23,9 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/view.do")
-	public String view() {
+	public String view(long no, int inc) {
 		log.info("게시판 글보기................................");
+		log.info("no=" + no + ", inc=" + inc);
 		return "board/view";
 	}
 
@@ -37,8 +39,9 @@ public class BoardController {
 	
 
 	@PostMapping("/write.do")	
-	public String write() {
+	public String write(BoardVO vo) {
 		log.info("게시판 글쓰기 처리................................");
+		log.info(vo);
 		return "redirect:list.do";
 	}
 
@@ -53,7 +56,7 @@ public class BoardController {
 	@PostMapping("/update.do")
 	public String update() {
 		log.info("게시판 글수정 처리................................");
-		return "redirect:view.do";
+		return "redirect:view.do?no=1&inc=1";
 	}
 
 	
