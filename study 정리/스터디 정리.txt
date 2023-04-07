@@ -20,6 +20,7 @@
 https://central.sonatype.com/   : Libray 다움을 위한 Maven  설정
 https://projectlombok.org/
 https://www.toptal.com/developers/gitignore   : ignore 설정 자동 생성
+https://mybatis.org/mybatis-3/ko/getting-started.html : mybatis doc
 
 
 1. Webjjang Spring ver.2023.03 01-05 개발 환경 구축 - Lombok 라이브러리 확인하기(웹짱과 함께하는 스프링)
@@ -152,3 +153,17 @@ DI 를 위해 Lombok 의 Setter 사용 (@Setter(onMethod_ = @Autowired))
 	@Setter(onMethod_ = @Autowired)
 	private TimeMapper  timeMapper;
 	=> Spring 에서 TimeMapper 인터페이스의 객체를 생성하여 timeMapper 에 할당한다.
+	
+	
+	
+11. Webjjang Spring ver.2023.03 04-03 MyBatis의 Mapper.xml을 사용하여 SQL 처리하기(웹짱과 함께하는 스프링)	
+	- 이클립스에서 New -> Package 로 생성 시 package 명을 . 으로 구분하는 경우 계층별 폴더를 생성해준다.
+	- resource 폴더에 mapper 를 위한 폴더 생성
+	- Mapper XML 파일은 인터페이스와 동일한 이름으로 생성해야한다.
+	- <!DOCTYPE 뒤에 나오는 tag 가 이후 작성 시 가장먼저 나오는 tag 이다.
+	- Mapper XML 파일에 <select id="getTime2"> id 에 매칭되는 Method 가 인터페이스에 선언되어 있어야한다.
+	- <mapper namespace="org.zerock.mapper.TimeMapper"> 의 namespace 와 맵핑할 인터페이스의 package 경로가 동일해야한다.
+			package org.zerock.mapper;
+	- Mapper XML과 인터페이스의 위치를 잘 잡아라
+	- 인터페이스와 동일한 XML 을 만들어라
+	- Namespace를 맞춰라.
