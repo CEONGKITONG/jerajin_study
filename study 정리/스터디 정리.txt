@@ -167,3 +167,23 @@ DI 를 위해 Lombok 의 Setter 사용 (@Setter(onMethod_ = @Autowired))
 	- Mapper XML과 인터페이스의 위치를 잘 잡아라
 	- 인터페이스와 동일한 XML 을 만들어라
 	- Namespace를 맞춰라.
+
+
+
+
+12. Webjjang Spring ver.2023.03 04-04 BoardMapper.xml을 이용하여 게시판 리스트 데이터 가져오기(웹짱과 함께하는 스프링)
+	- MyBatis 작업 과정
+		: 인터페이스 생성
+		: Mapper XML 생성 (resource 폴더에 생성)
+		: VO class 생성
+	- Mapper XML
+		Select Tag의 resultType : Select 한 결과를 담을 객체 타입
+CREATE USER JAVA_TEST IDENTIFIED BY JAVA_TEST
+DEFAULT TABLESPACE USERS;
+
+GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
+		
+	- Date 는 Java.sql이 아닌 Java.util 사용해야한다.
+	- SQL의 컬럼명과 VO CLASS의 컬럼명이 동일해야한다. (순서는 상관 없음)
+	- <select id="list" resultType="org.zerock.board.vo.BoardVO">
+	   : id => 실행할 BoardMapper 인터페이스의 method
