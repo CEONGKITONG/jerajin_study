@@ -187,3 +187,15 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 	- SQL의 컬럼명과 VO CLASS의 컬럼명이 동일해야한다. (순서는 상관 없음)
 	- <select id="list" resultType="org.zerock.board.vo.BoardVO">
 	   : id => 실행할 BoardMapper 인터페이스의 method
+	   
+	   
+13. Webjjang Spring ver.2023.03 04-05 MyBatis의 DB 처리 로그 찍기와 로그 줄이기(웹짱과 함께하는 스프링)	   
+	- 사용된 sql을 로깅
+		: log4jdbc-log4j2-jdbc4
+	- WARNING 으로된것만 출력하기
+	- 출력한것을 줄여서 출력하기
+		log4j.xml 에서 수준 설정
+	<logger name="jdbc.connection">		
+		<level value="warn" />		
+		=> name : log 상에 출력 조정해야할 대상
+		   level  value = info, warn
