@@ -55,20 +55,23 @@ public class BoardController {
 	public String write(BoardVO vo) {
 		log.info("게시판 글쓰기 처리................................");
 		log.info(vo);
+		service.write(vo);
 		return "redirect:list.do";
 	}
 
 	
 	@GetMapping("/update.do")
-	public String updateForm() {
+	public String updateForm(long no, Model model) {
 		log.info("게시판 수정 폼................................");
+		model.addAttribute("vo", service.view(no, 0));
 		return "board/update";
 	}
 
 	
 	@PostMapping("/update.do")
-	public String update() {
+	public String update(BoardVO vo) {
 		log.info("게시판 글수정 처리................................");
+		service.update(vo);
 		return "redirect:view.do?no=1&inc=1";
 	}
 
@@ -76,11 +79,14 @@ public class BoardController {
 	@PostMapping("/delete.do")
 	// @RequestParam(name, defaultValue, required, value) - 넘어오는 데이터의 ㅇ이름이 변수와 다른 경우, 값이 넘어오지 않는 경우 기본값, 필수항목, 값 세팅
 	// 여러개의 데이터를 List 로 받으면 Class 를 사용해야한다.
-	public String delete(@RequestParam("no") List<Long> no) {
+//	public String delete(@RequestParam("no") List<Long> no) {
 //	public String delete(long[] no) {
+	public String delete(BoardVO vo) {
 		log.info("게시판 글 삭제 처리................................");
 //		log.info(Arrays.toString(no));
-		log.info(no);
+//		log.info(no);
+		log.info(vo);
+		service.delete(vo);
 		return "redirect:list.do";
 	}
 	

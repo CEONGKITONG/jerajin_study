@@ -418,6 +418,13 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 25. Webjjang Spring ver.2023.03 07-02 게시판 리스트 JSP 작성(웹짱과 함께하는 스프링)		
 	- 부트 스트랩 적용 (list.jsp)
 		나중에 jquery와 부트스트랩을 사용할 수 있도록 하는 설정
+		<head> 태그에 추가
+		
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>		
+	  
 	- w3schools tryit editor bootstrap
 	- https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_default&stacked=h
 	- 게시판 타이틀 경우 깨져서 보이기 때문에 table tag 는 부적절 하다 (모바일용에서 부적합)
@@ -449,3 +456,9 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		<td><fmt:formatNumber pattern="#,###" value="${vo.hit}" /></td>
 		# => 값이 없으면 공백으로 대체
 		0 => 값이 없으면 숫자로 대체 
+		
+		
+28. Webjjang Spring ver.2023.03 07-05 게시판 글 등록하기와 로그 찍기(웹짱과 함께하는 스프링)		
+	- Mapper.XML 에 resultType 을 지정하지 않으면 기본적으로 int 형으로 돌려준다.
+		1 : 정상 처리
+		1이 아닌 경우 : 비 정상 처리 (데이터 없는 경우 포함)

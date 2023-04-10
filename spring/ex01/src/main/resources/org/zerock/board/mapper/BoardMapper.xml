@@ -30,9 +30,20 @@
 		WHERE NO = #{no}
 	</update>
 	
-	<insert id="write"></insert>
+	<insert id="write">
+		INSERT INTO BOARD (NO, TITLE, CONTENT, WRITER, PW) 
+		VALUES (BOARD_SEQ.NEXTVAL, #{title}, #{content}, #{writer}, #{pw})
+	</insert>
 	
-	<update id="update"></update>
+	<update id="update">
+		UPDATE BOARD SET TITLE = #{title}, CONTENT = #{content}, WRITER = #{writer}
+		WHERE NO = #{no}
+		AND PW = #{pw}
+	</update>
 	
-	<delete id="delete"></delete>
+	<delete id="delete">
+		DELETE FROM BOARD
+		WHERE NO = #{no}
+		AND PW = #{pw}		
+	</delete>
 </mapper>  
