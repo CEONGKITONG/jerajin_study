@@ -346,3 +346,14 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		uploadTempDir : 입시 업로드 폴더 (전달되는 용량이 커지면 임시 파일을 사용해서 저장해 놓는다. 작으면 메인 메모리를 사용한다.)
 		maxInMemorySize : 최대 메모리 사용 가능 사이즈 설정 (Byte 단위)
 		
+		
+21. Webjjang Spring ver.2023.03 06-07 파일 업로드와 여러 개의 파일 업로드 처리하기(웹짱과 함께하는 스프링)
+	- 	*.jsp <form action="write.do" method="post" enctype="multipart/form-data">
+		: enctype => body 부분에 내용이 들어간다.
+	- image 사용 시 주의점
+		VO 객체를 2가지를 만들어야 한다.
+				
+		file 용 : files - byte 단위 파일을 가지고 있는 정보가 : Controller 에서 사용
+		db 용 : title 
+				fileNames - 넘어온 파일의 저장된 이름  (DB 에서 사용)
+		
