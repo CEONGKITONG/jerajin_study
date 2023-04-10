@@ -414,3 +414,23 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		Spring 의 Autowired
 		Lombok 의 Setter
 		* 3개 중에 아무거나 사용해도 된다.
+		
+25. Webjjang Spring ver.2023.03 07-02 게시판 리스트 JSP 작성(웹짱과 함께하는 스프링)		
+	- 부트 스트랩 적용 (list.jsp)
+		나중에 jquery와 부트스트랩을 사용할 수 있도록 하는 설정
+	- w3schools tryit editor bootstrap
+	- https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_default&stacked=h
+	- 게시판 타이틀 경우 깨져서 보이기 때문에 table tag 는 부적절 하다 (모바일용에서 부적합)
+		div tag
+		table tag
+	- 부트 스트랩은 class로 동작한다.
+	- head 부분과 데이터 부분과 분리되는 경우
+		thead/tbody/tfooter 로 사용
+	- head와 body가 분리되어있지 않은 경우에는 
+	    tbody에 같이 사용 
+	- HTML (jsp 파일) 작성 시 하나의 항목을 선택해야할 때는 id 속성으로, 여러개를 선택해야할 때는 class  속성으로 지정하여 참조한다.
+	- location => 페이지 이동 처리 시 사용
+	- st key-in 하고 ctrl+space 하면 <style type="text/css"></style> 구분 자동 생성과
+	- sc key-in 하고 ctrl+space 하면 <script type="text/javascript"> 구분 자동 생성과
+	- 부트 스트랩 버튼 (https://www.w3schools.com/bootstrap/bootstrap_buttons.asp 참조)
+		clas="btn btn-default"
