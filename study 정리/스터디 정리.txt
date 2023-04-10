@@ -375,7 +375,7 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 	</c:forEach>
 		=> exception 에서 stacktrace 결과 값을 stack 에 넣고 (var="stack")  출력 한다.
 	- 404 에러 (처리해야할 페이지 Not Found)
-		web.xml 에 설정 추가 (404 에러 예외를 발생 시키겟다는 설정)
+		web.xml 에 설정 추가 (404 에러 예외를 발생 시키겟다는 설정) (NoHandlerFoundException.class 를 사용하기 위한 설정)
 		<init-param>
 			<param-name>throwExceptionIfNoHandlerFound</param-name>
 			<param-value>true</param-value>
@@ -384,3 +384,15 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		@ExceptionHandler(NoHandlerFoundException.class)
 		@ResponseStatus(HttpStatus.NOT_FOUND)
 		 => 404 로 응답할거다.
+		 
+		 
+23. Webjjang Spring ver.2023.03 06-09 jsp 없는 경우 처리(웹짱과 함께하는 스프링)
+	- jsp 파일을 찾지 못한 경우의 처리
+		url 은 있으나 jsp 파일이 없는 경우의 처리
+		 JSP 파일이 없는 경우 스프링의 404 처리가 되지 않는다. 그래서 여기서 처리하도록 정의해 준다.
+	public String list() {
+		log.info("게시판 리스트................................");
+//		System.out.println(10/0);
+		return "board/list1";  => 없는 jsp 파일
+	}		
+	- web.xml 에서 ctrl+space 눌렀을 때 원하는 tag 목록이 없는 경우에는 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app~  웹 모듈  버전이 낮아서 발생하는 것이므로 버전을 올려야한다.
