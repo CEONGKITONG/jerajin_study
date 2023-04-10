@@ -330,3 +330,19 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 	- @Data			인경우 @DateTimeFormat
 	- jsp 의 tag name은 VO 객체의 이름과 맞춰야한다.
 	- @DateTimeFormat 로 선언한 Date 타입에 대해 클라이언트에서 넘겨온 정보를 자동으로 변경해서 저장한다.
+	
+	
+	
+20. Webjjang Spring ver.2023.03 06-06 Spring 한글 처리와 파일 업로드 설정(웹짱과 함께하는 스프링)
+	- web.xml에 filter 를 이용해서 모든 요청에 대해 지정된 utf-8 encoder 를 적용 
+	- 파일 업로드
+		lib 없이 하는 경우 : 서블릿으로 올라오는 바이트 정보를 처리해야해서 복잡함
+		lib 사용 하는 경우 
+	- lib 추가는 pom.xml에 commons-fileupload 추가
+	- 파일에 대한 정보는 (임시 폴더 정의, 최대 파일 사이즈 등) web 서버 설정이 필요하며, servlet-context.xml, web.xml 에 설정을 해야한다.
+	 	org.springframework.web.multipart.commons.CommonsMultipartResolver
+		maxUploadSize : 전체 업로드 허용 용량  (Byte 단위)
+		maxUploadSizePerFile : 파일당 허용 옹량 (Byte 단위)
+		uploadTempDir : 입시 업로드 폴더 (전달되는 용량이 커지면 임시 파일을 사용해서 저장해 놓는다. 작으면 메인 메모리를 사용한다.)
+		maxInMemorySize : 최대 메모리 사용 가능 사이즈 설정 (Byte 단위)
+		
