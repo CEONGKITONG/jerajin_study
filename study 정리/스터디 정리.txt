@@ -322,3 +322,11 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 	- public String delete(@RequestParam("no") List<Long> bno) {
 	  =>@RequestParam 는 요청하는 파라미터와 메서트가 받는 파라미터가 이름이 다를 경우에 변환해서 사용하기 위해 사용
     - public String delete(@RequestParam("no") List<Long> no) {  => List 로 받아야할 경우는 @RequestParam 를 사용해야 오류가 나지 않는다.
+	
+	
+19. Webjjang Spring ver.2023.03 06-05 날짜 데이터를 Date 객체로 받아내기(웹짱과 함께하는 스프링)	
+	- String -> Date 로 변환 어노테이션
+	- @Controller	인경우 @InitBinder
+	- @Data			인경우 @DateTimeFormat
+	- jsp 의 tag name은 VO 객체의 이름과 맞춰야한다.
+	- @DateTimeFormat 로 선언한 Date 타입에 대해 클라이언트에서 넘겨온 정보를 자동으로 변경해서 저장한다.
