@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>게시판 글 수정</h1>
+<h1>게시판 글 수정 폼</h1>
 <form action="update.do" method="post">
 	<button>수정</button>
 </form>

@@ -437,3 +437,15 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		
 26. Webjjang Spring ver.2023.03 07-03 게시판 글보기 데이터 가져오기(웹짱과 함께하는 스프링)
     -	
+	
+	
+27. Webjjang Spring ver.2023.03 07-04 게시판 글보기 JSP 작성하기 & JSTL 날짜, 숫자 폼 사용하기(웹짱과 함께하는 스프링	
+	- jsp 페이지의 날짜 포맷을 jstl 을 가지고 포맷팅을 할 수 있다.
+		<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+		=> 날짜 포맷, 숫자 1000 단위 마다 콤마 지정 등
+	- 조건에 맞는 tag 사용을 위해 jsp 템플릿을 사용해도 괜찮다. 반복 taglib 작성 방지
+	- 포맷팅 지정 <td><fmt:formatDate pattern="yyyy-MM-dd" value="${vo.writeDate}"/></td>
+	- 숫자 자릿수 포맷팅
+		<td><fmt:formatNumber pattern="#,###" value="${vo.hit}" /></td>
+		# => 값이 없으면 공백으로 대체
+		0 => 값이 없으면 숫자로 대체 
