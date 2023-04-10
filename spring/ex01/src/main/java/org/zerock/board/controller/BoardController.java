@@ -23,6 +23,7 @@ public class BoardController {
 	@RequestMapping("/list.do")
 	public String list() {
 		log.info("게시판 리스트................................");
+//		System.out.println(10/0);
 		return "board/list";
 	}
 	

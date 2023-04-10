@@ -239,14 +239,14 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 	<context:component-scan base-package="org.zerock.controller" />
 	=> org.zerock.controller 하위의 class 에 대한 객체는 자동 생성하겠다는 의미
 	
-	// 자동 생성 어노테이션 - @Coontroller, @Service, @Repository, @Component, @RestController, @Advice
+	// 자동 생성 어노테이션 - @Coontroller, @Service, @Repository, @Component, @RestController, @ControllerAdvice
 	// @Coontroller - servlet-context.xml 에 선언, 그 외 어노테이션 - root-context.xml에 선언
 	@Coontroller : url 과 맵핑된 class 중에서 자동 생성되어야하는 class 의 경우
 	@Service     : Biz Logic 같은 class 같이 자동생성해야하는 경우
 	@Repository  : DAO와 같은 데이터 보관하는 class 같이 자동 생성해야하는 경우
 	@Component   : 애매한 class 인데 자동생성되어야하는 경우
 	@RestController : 데이터 그대로 보내는 class
-	@Advice : 예외 처리
+	@ControllerAdvice : 예외 처리
 	
 	
 	
@@ -357,3 +357,30 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		db 용 : title 
 				fileNames - 넘어온 파일의 저장된 이름  (DB 에서 사용)
 		
+22. Webjjang Spring ver.2023.03 06-08 Spring 예외 처리(웹짱과 함께하는 스프링)
+	- @ExceptionHandler : 예외 처리 핸들러 지정 어노테이션
+		@ExceptionHandler(예외 대상 예외 class 명)
+		@ExceptionHandler 는 예외 대상 class를 중복으로 잡을 수 없다.
+	- 프로젝트 내에 예외대상 class 의 예외 발생 시 해당 핸들러가 실행된다.
+	- error_page.jsp
+		<h4>${exception.message }</h4>
+		=> jstl 사용. 
+		=> CommonExceptionAdvice.exception() 의 model.addAttribute("exception", e); 코드에서 사용된 "exception" 지정
+		=> .message 는 get~ 을 붙여서 getMessage 로 참조한다.
+	- <ul>  : unorderlist 순서가 없는 리스트
+	- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+		=> jstl 태그 사용 : pom.xml 에 정의되어있기 때문에 사용할 수 있다.
+	<c:forEach items="${exception.stackTrace }" var="stack">
+		<li>${stack}</li>
+	</c:forEach>
+		=> exception 에서 stacktrace 결과 값을 stack 에 넣고 (var="stack")  출력 한다.
+	- 404 에러 (처리해야할 페이지 Not Found)
+		web.xml 에 설정 추가 (404 에러 예외를 발생 시키겟다는 설정)
+		<init-param>
+			<param-name>throwExceptionIfNoHandlerFound</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	- 	핸들러에 어노테이션 추가
+		@ExceptionHandler(NoHandlerFoundException.class)
+		@ResponseStatus(HttpStatus.NOT_FOUND)
+		 => 404 로 응답할거다.
