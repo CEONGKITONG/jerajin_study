@@ -18,5 +18,6 @@
 	<button>삭제</button>
 </form>
 </div>
+<div>${vo }</div>
 </body>
 </html>

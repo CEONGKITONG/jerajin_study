@@ -434,3 +434,6 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 	- sc key-in 하고 ctrl+space 하면 <script type="text/javascript"> 구분 자동 생성과
 	- 부트 스트랩 버튼 (https://www.w3schools.com/bootstrap/bootstrap_buttons.asp 참조)
 		clas="btn btn-default"
+		
+26. Webjjang Spring ver.2023.03 07-03 게시판 글보기 데이터 가져오기(웹짱과 함께하는 스프링)
+    -	

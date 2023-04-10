@@ -19,4 +19,22 @@ public class BoardServiceImpl {
 	public List<BoardVO> list() {
 		return mapper.list();
 	}
+	
+	public BoardVO view(long no, int inc) {
+		if (inc == 1 )
+			mapper.increase(no);
+		return mapper.view(no);
+	}
+	
+	public int write(BoardVO vo) {
+		return mapper.write(vo);
+	}
+	
+	public int update(BoardVO vo) {
+		return mapper.update(vo);
+	}
+	
+	public int delete(BoardVO vo) {
+		return mapper.delete(vo);
+	}	
 }

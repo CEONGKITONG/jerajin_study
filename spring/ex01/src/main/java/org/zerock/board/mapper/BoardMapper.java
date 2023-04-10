@@ -10,6 +10,8 @@ public interface BoardMapper {
 	
 	public BoardVO view(long no);
 	
+	public int increase(long no);
+	
 	public int write(BoardVO vo);
 	
 	public int update(BoardVO vo);

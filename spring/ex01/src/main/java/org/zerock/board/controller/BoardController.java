@@ -35,9 +35,10 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/view.do")
-	public String view(long no, int inc) {
+	public String view(long no, int inc, Model model) {
 		log.info("게시판 글보기................................");
 		log.info("no=" + no + ", inc=" + inc);
+		model.addAttribute("vo", service.view(no, inc));
 		return "board/view";
 	}
 

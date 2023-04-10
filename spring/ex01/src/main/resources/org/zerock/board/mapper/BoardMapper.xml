@@ -17,4 +17,22 @@
 	WHERE 1=1
 	AND RNUM BETWEEN 1 AND 10
 	</select>
+	
+	<select id="view" resultType="org.zerock.board.vo.BoardVO">
+		SELECT NO, TITLE, CONTENT, WRITER, WRITEDATE, HIT
+		FROM BOARD
+		WHERE 1=1
+		AND NO = #{no}
+	</select>
+	
+	<update id="increase">
+		UPDATE BOARD SET HIT = HIT + 1
+		WHERE NO = #{no}
+	</update>
+	
+	<insert id="write"></insert>
+	
+	<update id="update"></update>
+	
+	<delete id="delete"></delete>
 </mapper>  
