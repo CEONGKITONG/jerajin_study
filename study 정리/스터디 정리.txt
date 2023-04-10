@@ -396,3 +396,21 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 		return "board/list1";  => 없는 jsp 파일
 	}		
 	- web.xml 에서 ctrl+space 눌렀을 때 원하는 tag 목록이 없는 경우에는 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app~  웹 모듈  버전이 낮아서 발생하는 것이므로 버전을 올려야한다.
+	
+	
+24. Webjjang Spring ver.2023.03 07-01 게시판 리스트 데이터 가져오기(웹짱과 함께하는 스프링)
+	- BoardService : 게시판 리스트 데이터 가져오는 인터페이스
+	  BoardServiceImpl : 리스트 가져오는 구현체
+	  BoardMapper  : Board Transaction 처리를 위한 Interface
+	  BoardMapper.xml : BoardMapper 인터페이스와 이름이 동일한 xml 파일  (Board 용 SQL 작성 )
+	  => MyBatis에서 BoardMapper 인터페이스와 BoardMapper.xml 을 매칭 시킴
+	- 작성 순서 BoardMapper 인터페이스 작성 => BoardMapper.xml 작성 -> BoardServiceImpl 작성
+	- 호출 순서
+		BoardController -> BoardService -> BoardServiceImpl -> BoardMapper
+	- @Setter(onMethod_ = @Autowired)	: Spring 에서 Autowired 할 경우 어노테이션
+	  @Inject							: 일반 JAVA 에서 (서블릿이 아닌) Autowired할 경우 어노테이션
+	- DI 하는 3가지 방법
+		JAVA 의 Inject
+		Spring 의 Autowired
+		Lombok 의 Setter
+		* 3개 중에 아무거나 사용해도 된다.
