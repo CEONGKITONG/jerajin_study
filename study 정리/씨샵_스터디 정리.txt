@@ -26,4 +26,23 @@
 	- code . 
 		현재 프로젝트를 VisualStudio Code로 Open 하여 편집해라
 		
-	- ctrl + ee  key : 특정 코드를 테스트하고 싶을때 사용
+	- ctrl + ee  key : 특정 코드를 테스트하고 싶을때 사용 (C# Interactive) (c# 대화형)
+	
+3. C# 강의 - C# 교과서 마스터하기 03. Hello, World
+	- https://try.dot.net/
+		=> 웹에서 c# 코드를 테스트할 수 있는 사이트
+	- 코드 조각
+		cw + tab + tab 누르면 Console.WriteLine(); 코드 가 자동 입력된다.
+	- c#9.0 부터는 class 와 main 메서드가 없어도 코드가 실행 될 수 있다.
+	- dotnet new console
+		=> 현재 디렉토리 이름으로 console 프로젝트 생성하는 명령
+	- Visual Studio Code 에서 View -> Terminal 에서 콘솔 명령으로 입력 가능
+	- Linux (ubuntu) 에서 사용 가능
+		Visual Studio Code 로 개발가능
+		Windows Form와 WPF 는 Windwos 환경에서만 사용 가능
+	- https://learn.microsoft.com/ko-kr/dotnet/csharp/
+	- 마이크로 소프트 언어 포털
+		https://www.microsoft.com/ko-kr/language/Search?&searchTerm=method&langID=457&Source=true&productid=0
+		=> 해당 언어를 공식 사용
+	- 닷넷 api 브라우저
+		https://learn.microsoft.com/en-us/dotnet/api/

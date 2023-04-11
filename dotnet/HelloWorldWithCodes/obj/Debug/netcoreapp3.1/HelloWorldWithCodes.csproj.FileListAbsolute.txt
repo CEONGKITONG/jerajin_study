@@ -1,0 +1,13 @@
+C:\jerajin_study\dotnet\HelloWorldWithCodes\bin\Debug\netcoreapp3.1\HelloWorldWithCodes.exe
+C:\jerajin_study\dotnet\HelloWorldWithCodes\bin\Debug\netcoreapp3.1\HelloWorldWithCodes.deps.json
+C:\jerajin_study\dotnet\HelloWorldWithCodes\bin\Debug\netcoreapp3.1\HelloWorldWithCodes.runtimeconfig.json
+C:\jerajin_study\dotnet\HelloWorldWithCodes\bin\Debug\netcoreapp3.1\HelloWorldWithCodes.runtimeconfig.dev.json
+C:\jerajin_study\dotnet\HelloWorldWithCodes\bin\Debug\netcoreapp3.1\HelloWorldWithCodes.dll
+C:\jerajin_study\dotnet\HelloWorldWithCodes\bin\Debug\netcoreapp3.1\HelloWorldWithCodes.pdb
+C:\jerajin_study\dotnet\HelloWorldWithCodes\obj\Debug\netcoreapp3.1\HelloWorldWithCodes.csprojAssemblyReference.cache
+C:\jerajin_study\dotnet\HelloWorldWithCodes\obj\Debug\netcoreapp3.1\HelloWorldWithCodes.AssemblyInfoInputs.cache
+C:\jerajin_study\dotnet\HelloWorldWithCodes\obj\Debug\netcoreapp3.1\HelloWorldWithCodes.AssemblyInfo.cs
+C:\jerajin_study\dotnet\HelloWorldWithCodes\obj\Debug\netcoreapp3.1\HelloWorldWithCodes.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\HelloWorldWithCodes\obj\Debug\netcoreapp3.1\HelloWorldWithCodes.dll
+C:\jerajin_study\dotnet\HelloWorldWithCodes\obj\Debug\netcoreapp3.1\HelloWorldWithCodes.pdb
+C:\jerajin_study\dotnet\HelloWorldWithCodes\obj\Debug\netcoreapp3.1\HelloWorldWithCodes.genruntimeconfig.cache
