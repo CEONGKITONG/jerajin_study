@@ -1,0 +1,13 @@
+C:\jerajin_study\dotnet\HellowWorldConsole\bin\Debug\netcoreapp3.1\HellowWorldConsole.exe
+C:\jerajin_study\dotnet\HellowWorldConsole\bin\Debug\netcoreapp3.1\HellowWorldConsole.deps.json
+C:\jerajin_study\dotnet\HellowWorldConsole\bin\Debug\netcoreapp3.1\HellowWorldConsole.runtimeconfig.json
+C:\jerajin_study\dotnet\HellowWorldConsole\bin\Debug\netcoreapp3.1\HellowWorldConsole.runtimeconfig.dev.json
+C:\jerajin_study\dotnet\HellowWorldConsole\bin\Debug\netcoreapp3.1\HellowWorldConsole.dll
+C:\jerajin_study\dotnet\HellowWorldConsole\bin\Debug\netcoreapp3.1\HellowWorldConsole.pdb
+C:\jerajin_study\dotnet\HellowWorldConsole\obj\Debug\netcoreapp3.1\HellowWorldConsole.csprojAssemblyReference.cache
+C:\jerajin_study\dotnet\HellowWorldConsole\obj\Debug\netcoreapp3.1\HellowWorldConsole.AssemblyInfoInputs.cache
+C:\jerajin_study\dotnet\HellowWorldConsole\obj\Debug\netcoreapp3.1\HellowWorldConsole.AssemblyInfo.cs
+C:\jerajin_study\dotnet\HellowWorldConsole\obj\Debug\netcoreapp3.1\HellowWorldConsole.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\HellowWorldConsole\obj\Debug\netcoreapp3.1\HellowWorldConsole.dll
+C:\jerajin_study\dotnet\HellowWorldConsole\obj\Debug\netcoreapp3.1\HellowWorldConsole.pdb
+C:\jerajin_study\dotnet\HellowWorldConsole\obj\Debug\netcoreapp3.1\HellowWorldConsole.genruntimeconfig.cache

@@ -1,0 +1,29 @@
+1. C# 교과서 마스터하기 01. C# 교과서 책 마스터하기 시작, C# 강의, C# 강좌, C# 동영상 강의
+2. C# 강의 - C# 교과서 마스터하기 02. 준비사항
+	- windwos 10
+	- visual studio 2019 설치 (https://my.visualstudio.com/Downloads?q=visual%20studio%202019&wt.mc_id=o~msft~vscom~older-downloads)
+	- .Net Core 3.1 SDK 설치  (https://dotnet.microsoft.com/en-us/download)
+	- .Net SDK 를 가지고 빌드
+	
+	
+	- .Net Core SDK 설치
+		start https://dot.net
+	- visual stuido code 설치
+		start https://code.visualstudio.com
+	- visual studio community 설치
+		start https://www.visualstudio.com
+		
+	- Microsoft Store 에서 Windows Terminal 설치
+		=> 화면 탭 사용 가능
+	
+	- dotnet new -l
+		console 형 dotnet 프로젝트 생성 옵션 조회
+	- dotnet new console -o HellowWorldConsole
+		console 기반으로 HellowWorldConsole 프로젝트 생성
+	- console 모드에서 F7 키 : 직전 사용한 console 명령 조회
+	- dotnet run
+		현재 디랙토리의 프로젝트를 빌드해서 실행
+	- code . 
+		현재 프로젝트를 VisualStudio Code로 Open 하여 편집해라
+		
+	- ctrl + ee  key : 특정 코드를 테스트하고 싶을때 사용
