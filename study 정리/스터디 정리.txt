@@ -21,6 +21,7 @@ https://central.sonatype.com/   : Libray 다움을 위한 Maven  설정
 https://projectlombok.org/
 https://www.toptal.com/developers/gitignore   : ignore 설정 자동 생성
 https://mybatis.org/mybatis-3/ko/getting-started.html : mybatis doc
+https://www.w3schools.com/bootstrap/bootstrap_forms.asp : bootstrap 사이트
 
 
 1. Webjjang Spring ver.2023.03 01-05 개발 환경 구축 - Lombok 라이브러리 확인하기(웹짱과 함께하는 스프링)
@@ -462,3 +463,9 @@ GRANT CONNECT, RESOURCE, DBA TO JAVA_TEST;
 	- Mapper.XML 에 resultType 을 지정하지 않으면 기본적으로 int 형으로 돌려준다.
 		1 : 정상 처리
 		1이 아닌 경우 : 비 정상 처리 (데이터 없는 경우 포함)
+		
+29. Webjjang Spring ver.2023.03 07-06 게시판 글 수정 처리와 DB 로그 출력시키기(웹짱과 함께하는 스프링)
+	- Storyboard : 글자 입력 자릿수 제한 등 form 마다 제약을 미리 정의
+	- html 의 name : 서버에서 참조용
+			id : 클라이언트 브라우저에서 참조용
+	- 

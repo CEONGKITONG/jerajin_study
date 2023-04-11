@@ -72,7 +72,7 @@ public class BoardController {
 	public String update(BoardVO vo) {
 		log.info("게시판 글수정 처리................................");
 		service.update(vo);
-		return "redirect:view.do?no=1&inc=1";
+		return "redirect:view.do?no=" + vo.getNo() + "&inc=1";
 	}
 
 	
