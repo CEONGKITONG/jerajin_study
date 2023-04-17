@@ -46,3 +46,61 @@
 		=> 해당 언어를 공식 사용
 	- 닷넷 api 브라우저
 		https://learn.microsoft.com/en-us/dotnet/api/
+		
+		
+		
+40. 대리자 (Delegate)
+	- delegate void Runner();
+	  static void RunnerCall(Runner runner) => runner();  // 넘어온 메서드 실행 (runner 가 어떤 메서드 이던간에 파라미터 형식과 리턴 형식만 맞으면 넘긴 메서드를 그대로 실행한다.)
+	  
+	- Action 대리자: 반환값이 없는 메서드를 대신 호출합니다
+	- Func 대리자: 매개변수와 반환값이 있는 메서드를 대신 호출합니다
+		Func<매개변수형식, 반환값형식>
+		Func<매개변수형식, 매개변수형식,.. ,반환값형식>
+	- Predicate 대리자: T 매개변수에 대한 bool 값을 반환하는 메서드를 대신 호출합니다
+	
+	- Func<int> getNumber1 = delegate () { return 1234; };   => 무명 메서드()
+	  Func<int> getNumber2 = () => 1234;   => 람다식
+	
+	- Func<int, int> anonymous = delegate (int x) { return x * x; }; //① 익명 메서드 담기
+	  Func<int, double> lambda = x => x / (double)2;                 //② 람다 식 담기
+	  => 익명 메서드 대신 람다식을 많이 사용한다.
+	  
+	  
+	- static void StringLengthPrint(Func<string, int> stringlength, string message)
+	  => 첫번째 파라미터에 int 형을 리턴하는 함수를 넘기기 가능
+		Func<string, int> stringlength = data.Length;  와 같은 표현
+	  => String 으로 파라미터를 받고, int 형으로 return 하는 함수를 파라미터로 넘겨라.
+	  = > stringlength 은 int StringLength(string data) 함수의 alias 같은 것
+		
+		
+		
+	- static void Main() => StringLengthPrint(StringLength, "안녕하세요.");
+		=> 결국 StringLengthPrint (int, string) 형태
+		
+	- 함수형 프로그래밍 (https://mangkyu.tistory.com/111)
+		데이터를 변환하는 함수의 조합으로 구성되는 프로그램 작성 방법. 함수의 출력은 입력에 의해서만 정해지고, 함수를 실행하는 명령어를 내포한 구조로 연결하여 프로그램을 작성한다. (네이버)
+		함수형 프로그램은 기본적으로 람다형 문법을 따르는 방식 (https://blog.naver.com/sr_it_/222435285856)
+		함수 파라미터에 함수를 넘기는 방식
+		객체의 빌더 패턴과 유사
+			필요한 함수들을 조합해서 사용
+			String result = words.stream()
+                .filter(w -> w.length() > 1)
+                .map(String::toUpperCase)
+                .map(w -> w.substring(0, 1))
+                .collect(Collectors.joining(" "));
+		C#에서 함수형 프로그램밍의 정점은 LINQ
+			=> 특정 데이터를 결과를 다음 함수에 넘겨 연결해서 처리할 수 있다. (메서드 체이닝)(파이프라인 개념과 유사)
+			
+			
+53. 테스트
+	- MSTest /NUnit / xUnit
+	- TestClass 특성 : Test 대상 Class
+	- TestMethod 특성 : Test 대상 Method 라는 의미
+			
+54. NuGet 패키지
+	- 닷넷  패키지 관리자
+	- 라이브러리를 전 세계 개발자와 공유하기 위한 기능 (Add-On 추가 기능 같은..?)
+	- NuGet 패키지 생성 : 프로젝트 속성 -> 패키지 -> 빌드시 NuGet 패키지 생성  옵션 체크하여 빌드 (*.nupkg 파일 생성됨)
+	- NuGet 에 게시 : nuget.org 사이트 
+	- NuGet 에서 라이브러리 가져오기 : 프로젝트 -> 종속성 -> nuGet 패키지에서 가져오기 패키지에 추가해서빌드해야 DLL이 다운로드된다.

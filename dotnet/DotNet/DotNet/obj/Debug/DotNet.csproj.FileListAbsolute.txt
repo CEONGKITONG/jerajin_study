@@ -1,0 +1,6 @@
+C:\jerajin_study\dotnet\DotNet\DotNet\bin\Debug\DotNet.exe
+C:\jerajin_study\dotnet\DotNet\DotNet\bin\Debug\DotNet.pdb
+C:\jerajin_study\dotnet\DotNet\DotNet\obj\Debug\DotNet.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\DotNet\DotNet\obj\Debug\DotNet.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\DotNet\DotNet\obj\Debug\DotNet.exe
+C:\jerajin_study\dotnet\DotNet\DotNet\obj\Debug\DotNet.pdb
