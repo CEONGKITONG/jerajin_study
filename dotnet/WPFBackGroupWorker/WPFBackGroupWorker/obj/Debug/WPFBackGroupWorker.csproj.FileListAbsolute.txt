@@ -1,0 +1,15 @@
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\bin\Debug\WPFBackGroupWorker.exe.config
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\bin\Debug\WPFBackGroupWorker.exe
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\bin\Debug\WPFBackGroupWorker.pdb
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker.csproj.AssemblyReference.cache
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\MainWindow.g.cs
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\App.g.cs
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker_MarkupCompile.cache
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker_MarkupCompile.lref
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\MainWindow.baml
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker.g.resources
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker.Properties.Resources.resources
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker.csproj.GenerateResource.cache
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker.csproj.CoreCompileInputs.cache
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker.exe
+C:\Users\kindc\source\repos\WPFBackGroupWorker\WPFBackGroupWorker\obj\Debug\WPFBackGroupWorker.pdb
