@@ -93,6 +93,12 @@
 			=> 특정 데이터를 결과를 다음 함수에 넘겨 연결해서 처리할 수 있다. (메서드 체이닝)(파이프라인 개념과 유사)
 			
 			
+41. 이벤트
+	- 1. Delegate 선언 (이벤트 핸들러)
+	  2. Delegate 로 된 event 선언
+	  3. event에 이벤트 핸들러 메서드 할당
+	  4. 이벤트 발생
+	  
 53. 테스트
 	- MSTest /NUnit / xUnit
 	- TestClass 특성 : Test 대상 Class
@@ -104,3 +110,42 @@
 	- NuGet 패키지 생성 : 프로젝트 속성 -> 패키지 -> 빌드시 NuGet 패키지 생성  옵션 체크하여 빌드 (*.nupkg 파일 생성됨)
 	- NuGet 에 게시 : nuget.org 사이트 
 	- NuGet 에서 라이브러리 가져오기 : 프로젝트 -> 종속성 -> nuGet 패키지에서 가져오기 패키지에 추가해서빌드해야 DLL이 다운로드된다.
+	
+	
+	
+[ C# WPF ] 	
+
+1. C#, WPF HelloWorld(XAML기반)_WPF교육추천(WPF동영상/WPF강의/C#동영상/C#강의/C#교육/닷넷교육)
+	- XAML 기반 MAIN START XAML 은 APP.XAML 에서 아래 설정으로 정의한다.
+	StartupUri="MainWindow.xaml"> 
+	
+2. (닷넷C#, WPF기초강좌)C#코드 기반의 HelloWorld_WPF실무교육/자마린실무교육학원
+	- 코드 기반 MAIN START XAML 은 CLASS 파일에서 STATREAD 의 MAIN 메서드를 정의하여 실행할 CLASS를 정의한다.
+	        public static void Main(string[] args)
+        {            
+            [STAThread]
+            MainWindow app = new MainWindow();
+            app.Run();
+        }
+		
+		=> C# 9.0 버전
+		    var thread = new Thread(() =>
+            {
+                MainWindow app = new MainWindow();
+                app.Run();
+            });
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+	- // C# 9 에서는 STAThread 특성 지원 안함 (참조 : https://www.sysnet.pe.kr/Default.aspx?mode=2&sub=0&pageno=8&detail=1&wid=12623_)
+
+http://ojc.asia/bbs/board.php?bo_table=WPF&wr_id=3&sfl=wr_subject&stx=WPF%EA%B8%B0%EC%B4%88&sop=and
+
+
+
+
+[ Visual Studio 팁 ]	
+
+1. 상속받은 메서드 재정의를 위한 코드 자동 생성
+	- override 또는 Visual Basic에서 Overrides 및 다음에 공백을 입력
+	
+https://learn.microsoft.com/ko-kr/visualstudio/ide/reference/generate-override?view=vs-2022	

@@ -1,0 +1,9 @@
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\obj\Debug\WPFHelloWorld2.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\obj\Debug\WPFHelloWorld2.Properties.Resources.resources
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\obj\Debug\WPFHelloWorld2.csproj.GenerateResource.cache
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\obj\Debug\WPFHelloWorld2.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\bin\Debug\WPFHelloWorld2.exe.config
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\bin\Debug\WPFHelloWorld2.exe
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\bin\Debug\WPFHelloWorld2.pdb
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\obj\Debug\WPFHelloWorld2.exe
+C:\jerajin_study\dotnet\WPFHelloWorld2\WPFHelloWorld2\obj\Debug\WPFHelloWorld2.pdb
