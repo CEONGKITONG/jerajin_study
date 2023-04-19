@@ -1,0 +1,15 @@
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\bin\Debug\WPFHelloWorld.exe.config
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\bin\Debug\WPFHelloWorld.exe
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\bin\Debug\WPFHelloWorld.pdb
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\MainWindow.g.cs
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\App.g.cs
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld_MarkupCompile.cache
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld_MarkupCompile.lref
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\MainWindow.baml
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld.g.resources
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld.Properties.Resources.resources
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld.csproj.GenerateResource.cache
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld.exe
+C:\jerajin_study\dotnet\WPFHelloWorld\WPFHelloWorld\obj\Debug\WPFHelloWorld.pdb
