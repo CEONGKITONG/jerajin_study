@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>BizActor Call Sample Page</title>
+ <style>
+ * { margin: 2px }
+ h3 {
+ border-bottom: 1px solid red;
+ }
+ div {
+ font-family: 'Courier New', Courier, monospace;
+ margin: 2px;
+ }
+ textarea {
+ font-family: 'Courier New', Courier, monospaces;
+ width: 99%;
+ border-radius: 5px;
+ }
+ button {
+ margin-left: 4px;
+ height: 22px;
+ width: 120px;
+ color: #2359A3;
+ background: #F7F7F7;
+ border-width: 1px;
+ border-style: solid;
+ border-color: #D8DEE2 #ACBCC6 #ACBCC6 #D8DEE2;
+ }
+ .label {
+ font-family: monospace;
+ font-weight: bold;
+ }
+ </style>
+ <script type="text/javascript">
+
+ function callBizActor() {
+
+ var apiUrl = "http://localhost:18080/bizarest";
+ var requestBody = document.getElementById("requestBody");
+ var responseStatus =
+document.getElementById("responseStatus");
+ var responseBody = document.getElementById("responseBody");
+ console.log('requestBody = \n', requestBody.value);
+ var xhr = new XMLHttpRequest();
+ xhr.onreadystatechange = function() {
+ console.log('this.readyState = ', this.readyState);
+ console.log('this.status = ', this.status);
+ if (this.readyState == 4 && this.status == 200) {
+ console.log('responseBody = \n', this.responseText);
+ responseStatus.value = this.status;
+responseBody.value = this.responseText;
+ }
+ else if (this.status == 500) {
+ console.log('responseBody = \n', this.responseText);
+responseStatus.value = this.status;
+responseBody.value = this.responseText;
+ }
+ }
+ xhr.open("POST", apiUrl);
+ xhr.setRequestHeader("Content-Type", "application/json");
+ xhr.send(requestBody.value);
+ }
+ function clearResult() {
+ let responseStatus =
+document.getElementById("responseStatus");
+ let responseBody = document.getElementById("responseBody");
+ responseStatus.value = '';
+ responseBody.value = '';
+ }
+ </script>
+</head>
+<body>
+ <h3>Request Body</h3>
+ <div>
+	 <textarea id="requestBody" rows="5">
+{"actID" : "BRBookMasterSearch","inDTName":"SearchInfo","outDTName":"BookInfo","refDS" :{"SearchInfo":[{"CLASSCD":"AA","BOOKNM":"J2EE10", "KEYWORD" : "J2EE"}]}}
+</textarea>
+ </div>
+ <div>
+	<button id="submit" onClick="javascript:callBizActor();">BizActor Call</button> 
+	<button id="clear" onClick="javascript:clearResult();">Clear Result</button> 
+ </div>
+ <h3>Response</h3>
+ <div>
+ <span class="label">HTTP Status </span><input id="responseStatus"
+type="text" vaule=""> <br />
+ <textarea id="responseBody" rows="5">
+ </textarea>
+ </div>
+</body>
+</html>
