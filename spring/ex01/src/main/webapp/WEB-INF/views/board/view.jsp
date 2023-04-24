@@ -10,6 +10,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style type="text/css">
+  	#deleteDiv{
+  		display: none;
+  	}
+  </style>
+  
+  <script type="text/javascript">
+  	$(function() {
+  	  	$("#deleteBtn").click(function() {
+//   	  	  	alert("삭제 버튼 클릭");
+  	  	  	$("#deleteDiv").slideDown();
+  	  	  });
+
+  	  	$("#cancelBtn").click(function() {
+//	  	  	alert("삭제 버튼 클릭");
+	  	  	$("#deleteDiv").slideUp();
+	  	  });	  	  
+  	 });
+  </script>
 </head>
 <body>
 <div class="container">
@@ -45,7 +65,7 @@
 	</table>
 	
 	<a href="update.do?no=${vo.no }" class="btn btn-default">수정</a>
-	<a href="#" class="btn btn-default" onClick="return false">삭제</a>
+	<a href="#" class="btn btn-default" onClick="return false" id="deleteBtn">삭제</a>
 	<a href="list.do"" class="btn btn-default">리스트</a>
 	
 	<div id="deleteDiv">
@@ -53,9 +73,10 @@
 			<input name="no" value="${vo.no }" type="hidden">
 			<div class="form-group">
 				<label>본인 확인용 비밀번호 입력:</label>
-				<input name="pw" class="form-control">
+				<input name="pw" class="form-control" type="password">
 			</div>			
-			<button class="btn btn-default">삭제</button>
+			<button class="btn btn-danger btn-sm">삭제</button>
+			<button class="btn btn-warning btn-sm" type="button" id="cancelBtn">취소</button>
 		</form>
 	</div>
 </div>
