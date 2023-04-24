@@ -33,12 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>PassMethodAsParameter</StartupObject>
+    <StartupObject>ExtensionFunction</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="40_Delegate\AnonymousMethod.cs" />
     <Compile Include="40_Delegate\DelegateParameter.cs" />
     <Compile Include="40_Delegate\PassMethodAsParameter.cs" />
+    <Compile Include="41_Event\EventDemo.cs" />
+    <Compile Include="46_AttributeReflection\AttributePractice.cs" />
+    <Compile Include="46_AttributeReflection\CallerInformation.cs" />
+    <Compile Include="46_AttributeReflection\ConditionalDemo.cs" />
+    <Compile Include="46_AttributeReflection\NickNameAttributeTest.cs" />
+    <Compile Include="46_AttributeReflection\ReflectionGetMembers.cs" />
+    <Compile Include="46_AttributeReflection\ReflectionGetMethod.cs" />
+    <Compile Include="46_AttributeReflection\ReflectionGetProperty.cs" />
+    <Compile Include="46_AttributeReflection\TypeAndActivator.cs" />
+    <Compile Include="49_ExtensionMethod\ExtensionFunction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

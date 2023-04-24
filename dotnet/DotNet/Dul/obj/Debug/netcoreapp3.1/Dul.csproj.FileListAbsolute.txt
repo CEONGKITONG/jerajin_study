@@ -1,0 +1,9 @@
+C:\jerajin_study\dotnet\DotNet\Dul\bin\Debug\netcoreapp3.1\Dul.deps.json
+C:\jerajin_study\dotnet\DotNet\Dul\bin\Debug\netcoreapp3.1\Dul.dll
+C:\jerajin_study\dotnet\DotNet\Dul\bin\Debug\netcoreapp3.1\Dul.pdb
+C:\jerajin_study\dotnet\DotNet\Dul\obj\Debug\netcoreapp3.1\Dul.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\DotNet\Dul\obj\Debug\netcoreapp3.1\Dul.AssemblyInfoInputs.cache
+C:\jerajin_study\dotnet\DotNet\Dul\obj\Debug\netcoreapp3.1\Dul.AssemblyInfo.cs
+C:\jerajin_study\dotnet\DotNet\Dul\obj\Debug\netcoreapp3.1\Dul.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\DotNet\Dul\obj\Debug\netcoreapp3.1\Dul.dll
+C:\jerajin_study\dotnet\DotNet\Dul\obj\Debug\netcoreapp3.1\Dul.pdb
