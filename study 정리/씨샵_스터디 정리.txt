@@ -265,6 +265,27 @@ http://ojc.asia/bbs/board.php?bo_table=WPF&wr_id=3&sfl=wr_subject&stx=WPF%EA%B8%
 
 	- WPF와 상관없이 UI를 비동기 처리하기 할경우 필요한 내용(윈폼도 같이 사용 가능할듯)
 	
+6. (WPF동영상강좌)WPF 트리거(Trigger)란?_프로퍼티트리거(WPF동영상/WPF강의/C#동영상/C#강의/C#교육/닷넷교육/C#강좌)
+	- Trigger : 어떤 조건, 이번트 등 주어졌을 대 묵시적으로 컨트롤의 상태 또는 이벤트 핸들러등을 호출하는 기능
+	- Style 의 Setter : 엘리먼트가 처음 생성되었을 때의 프로퍼티를 설정
+	   Trigger : 프로퍼티가 변경되는 경우에 프로퍼티를 설정
+	- Style 의 Triggers 프로퍼티sms TriggerBase 객체의 컬렉션인 TriggerCollection 타입
+	  TriggerBase에서 파생된 클랙스 
+		DataTrggier
+		EventTrigger
+		MultiDataTrigger
+		MultiTrigger
+		Trigger (Property Trigger)
+	- Trigger (Property Trigger)
+		<Trigger Property   형태
+		특정 프로퍼티의 변화(어떤 값을 가졌을 때)에 내부에 정의한 Setter 컬렉션이 실행되는 트리거
+		컨트롤이나 엘리먼트가 반응하는 방법을 정의하는 Trigger 이다. 
+		대부분 이 프로퍼티는 IsMouseOver 프로퍼티와 같은 사용자의 입력 프로퍼티를 포함한다.
+		이때 Trigger는 Setter에서 정의된 프로퍼티를 변경한다.
+	-  정해진 Resource에 접근할 때는 StaticResource 를 사용한다.
+		<Button Width="100" Height="70" Style="{StaticResource MyStyle}" Content="Trigger" />
+	
+	
 [ Visual Studio 팁 ]	
 
 1. 상속받은 메서드 재정의를 위한 코드 자동 생성
