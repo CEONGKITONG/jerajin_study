@@ -1,0 +1,15 @@
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\bin\Debug\WPFDataTrigger.exe.config
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\bin\Debug\WPFDataTrigger.exe
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\bin\Debug\WPFDataTrigger.pdb
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\MainWindow.g.cs
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\App.g.cs
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger_MarkupCompile.cache
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger_MarkupCompile.lref
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\MainWindow.baml
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger.g.resources
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger.Properties.Resources.resources
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger.csproj.GenerateResource.cache
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger.exe
+C:\jerajin_study\dotnet\WPFDataTrigger\WPFDataTrigger\obj\Debug\WPFDataTrigger.pdb
