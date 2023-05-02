@@ -1,0 +1,16 @@
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\MainWindow.g.cs
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\App.g.cs
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2_MarkupCompile.cache
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2_MarkupCompile.lref
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\bin\Debug\WPFListBoxLinqDataBind2.exe.config
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\bin\Debug\WPFListBoxLinqDataBind2.exe
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\bin\Debug\WPFListBoxLinqDataBind2.pdb
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\MainWindow.baml
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2.g.resources
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2.Properties.Resources.resources
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2.csproj.GenerateResource.cache
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2.exe
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind2\WPFListBoxLinqDataBind2\obj\Debug\WPFListBoxLinqDataBind2.pdb

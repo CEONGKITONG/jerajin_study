@@ -1,0 +1,8 @@
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind\WPFListBoxLinqDataBind\obj\Debug\WPFListBoxLinqDataBind.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind\WPFListBoxLinqDataBind\obj\Debug\MainWindow.g.cs
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind\WPFListBoxLinqDataBind\obj\Debug\App.g.cs
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind\WPFListBoxLinqDataBind\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind\WPFListBoxLinqDataBind\obj\Debug\WPFListBoxLinqDataBind_MarkupCompile.cache
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind\WPFListBoxLinqDataBind\obj\Debug\WPFListBoxLinqDataBind_MarkupCompile.lref
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind\WPFListBoxLinqDataBind\obj\Debug\WPFListBoxLinqDataBind.exe
+C:\jerajin_study\dotnet\WPFListBoxLinqDataBind\WPFListBoxLinqDataBind\obj\Debug\WPFListBoxLinqDataBind.pdb

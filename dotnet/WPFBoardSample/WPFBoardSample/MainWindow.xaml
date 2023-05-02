@@ -1,0 +1,24 @@
+﻿<Window x:Class="WPFBoardSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFBoardSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Button x:Name="Add" Click="btnGetBoardListInfo_Click">게시물 목록 가져오기</Button>
+        <TextBox x:Name="txtReqData"></TextBox>
+        <Grid x:Name="gridBoardList">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--<TextBlock Grid.Row="0" Grid.Column="0" Text="Book Id"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Book Name"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Publer"/>-->            
+        </Grid>
+        <TextBox x:Name="txtRepData" Height="100"></TextBox>
+    </StackPanel>
+</Window>

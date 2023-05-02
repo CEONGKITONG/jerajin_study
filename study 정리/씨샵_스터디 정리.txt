@@ -303,7 +303,9 @@ http://ojc.asia/bbs/board.php?bo_table=WPF&wr_id=3&sfl=wr_subject&stx=WPF%EA%B8%
             DataContext = new DataObject();
         }
 	
-	
+8. (WPF강좌)ListBox와 LINQ쿼리데이터바인딩, 새창띄우기, 이벤트 및 델리게이트를 통한 메인 윈도우리스트박스리프레쉬(WPF동영상/WPF강의/C#동영상/C#강의/C#교육)
+	- ObservableCollection<Duty> : Collection에 값이 들어오고 나갈때 자동으로 감지하기 위해 상속 받음
+		public class Duties : ObservableCollection<Duty>
 	
 	
 [ Visual Studio 팁 ]	
@@ -312,3 +314,622 @@ http://ojc.asia/bbs/board.php?bo_table=WPF&wr_id=3&sfl=wr_subject&stx=WPF%EA%B8%
 	- override 또는 Visual Basic에서 Overrides 및 다음에 공백을 입력
 	
 https://learn.microsoft.com/ko-kr/visualstudio/ide/reference/generate-override?view=vs-2022	
+
+
+
+
+
+[ WPF Modern Flat UI ]
+#. WPF C# Professional Modern Flat UI Tutorial
+	- https://www.youtube.com/watch?v=PzP8mw7JUzI&t=730s
+	- https://velog.io/@tataki26/WPF-ModernDesign-%EC%8B%A4%EC%8A%B5
+	
+	
+
+타키탸키
+
+로그인
+타키탸키
+
+로그인
+[WPF] ModernDesign 실습
+tataki26·2022년 1월 12일
+
+1
+Cwpf실습
+C언어(C, C++, C#)
+목록 보기
+14/14
+
+
+post-thumbnail
+
+MVVM 패턴
+
+[이미지 출처: https://blog.yena.io/studynote/2019/03/16/Android-MVVM-AAC-1.html]
+
+MVVM
+Model - View - ViewModel의 하나의 소프트웨어 구조 패턴(소프트웨어 아키텍처)
+UI와 Logic을 분리하기 위해 사용
+View가 데이터를 실시간으로 관찰(Observable 패턴) >> 자동으로 UI 갱신
+UI 변경(ViewModel)에 따른 Logic 변경(Model) 최소화
+(단위) 테스트 용이
+UI 디자인과 상관 없이 미리 정의된 Model과 ViewModel을 먼저 개발 가능
+ObservableObject.cs
+ViewModel의 기본이 되는 프로퍼티들이 정의 됨
+관찰 가능한 개체 생성
+INotifyPropertyChanged 인터페이스를 구현한 기본 클래스
+ViewModel을 이 클래스에서 상속 받아 만들 수 있다
+namespace ModernDesign.Core
+{
+    class ObservableObject : INotifyPropertyChanged
+    {
+        // 구현 강제에 따라 자동으로 정의
+        public event PropertyChangedEventHandler PropertyChanged;
+        
+        // name에 해당하는 이름을 가진 데이터가 변화할 때마다 이벤트 발생시키는 메서드
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            // PropertyChanged가 null이 아니면 Invoke 호출
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+    }
+}
+RelayCommand.cs
+참고: http://ojc.asia/bbs/board.php?bo_table=WPF&wr_id=146
+전통적인 이벤트 기반 프로그래밍
+컨트롤에 이벤트 핸들러 메서드를 코드 비하인등서 연결하여 사용자 이벤트 처리
+이벤트 처리 핸들러를 재사용하거나 단위 테스트 수행이 어려움
+XAML UI MVVM
+버튼 사용 시, Click 이벤트 핸들러를 이용하기 보다는 Command를 이용하기를 권장
+여러 버튼에서 하나의 Command 공유 가능
+모든 컨트롤마다 Click 이벤트 만들 필요 없음
+WPF Command
+ICommand 인터페이스를 구현하여 만든다
+Execute, CanExecute 메서드
+CanExecuteChanged 이벤트
+Execute
+실제 처리해야 하는 작업 기술
+CanExecute
+Execute 메서드의 코드를 실행할지 여부를 결정하는 코드 기술
+false 리턴 시, Execute 메서드 호출하지 않음
+명령 사용 여부 확인을 위해 WPF에 의해 호출 됨
+키보드 GET포커스, LOST포커스, 마우스 업 등의 UI 상호 작용 중 발생
+Command 패턴의 주체
+서비스를 요청하는 클라이언트(손님)
+명령을 서술하는 Command Object(주문서)
+명령을 요청하는 Command Invoker(웨이터)
+특정 명령을 실제 처리하는 Command Receiver(Target, 요리사)
+RelayCommand
+View에는 이벤트 처리 메서드가 없지만 사용자가 버튼을 클릭하면 프로그램이 이에 반응하고 사용자의 요청에 응답한다
+컨트롤들의 Command 속성이 설정되었기 때문
+이러한 바인딩은 사용자가 컨트롤을 클릭하면 ViewModel 실행을 통해 ICommand 개체가 공개되도록 한다
+ICommand를 구현하는 RelayCommand는 xaml에서 선언된 View에서 ViewModel의 기능을 손쉽게 사용할 수 있도록 해주는 어댑터
+ViewModel 외부에서 RelayCommand 정의 가능
+CommandManager의 RequerySuggested 이벤트
+사용자 정의 명령의 경우, CanExecute 메서드가 대부분의 시나리오에서 호출되지 않음
+CanExecuteChanged 이벤트를 RequerySuggested 이벤트에 연결
+특정 조건에 따라 버튼을 활성화/비활성화 가능
+CommandManager가 명령 실행에 영향을 줄 수 있는 변경 사항이 있다고 생각할 때마다 발생
+이때마다 CanExecute 호출(강제 실행 가능)
+명령 실행 기능이 변경되었다고 생각할 때마다(실제로 변경되지 않았다 하더라도) CanExecuteChanged를 발생
+CanExecuteChanged 이벤트
+CanExecute 메서드가 호출되어 CanExecute의 상태가 변경될 때 발생하는 이벤트
+해당 ICommand에 바인딩 된 모든 명령 소스(버튼 등)에 CanExecute에 의해 반환된 값이 변경 되었음을 알린다
+WPF는 CanExecute를 호출하고 Command에 연결된 컨트롤의 상태 변경
+namespace ModernDesign.Core
+{
+   class RelayCommand : ICommand
+    {
+        private Action<object> _execute;
+        private Func<object, bool> _canExecute;
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+
+	// 생성자
+        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        {
+            _execute = execute;
+            _canExecute = canExecute;
+        }
+        
+        // CommandManager.RequerySuggested 이벤트가 호출될 때마다 실행
+        // 즉, CanExecuteChanged 이벤트가 호출될 때마다 실행
+        // false 리턴 시, Execute 메서드 호출하지 않음
+        public bool CanExecute(object parameter)
+        {
+            // 첫번째 식이 true이면 이를 리턴하고 false면 두번째 식 리턴
+            return _canExecute == null || _canExecute(parameter);
+        }
+        
+        public void Execute(object parameter)
+        {
+            _execute(parameter);
+        }
+    }
+}
+MainWindow.xaml
+Border
+여러가지 컨트롤들을 감싸안고 배경과 테두리를 설정할 수 있게 해주는 컨트롤
+자식으로 단 1개의 컨트롤 밖에 가질 수 없다
+여러가지 컨트롤을 묶으려면 Grid나 StackPanel로 묶은 후 Border로 묶으면 된다
+<Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
+    </Border>
+TextBox
+하나의 박스에 대해 하나의 색깔, 사이즈, 폰트만 적용 가능
+고정된 라인 높이 폭을 가지고 줄 간격도 통일
+내부에 다른 태그를 넣을 수 없다
+출력과 편집 기능을 동시에 가지고 있다
+입력이 가능하다
+<TextBox Width="250"
+         Height="40"
+         VerticalAlignment="Center"
+         HorizontalAlignment="Left"
+         Margin="5"
+         Grid.Column="1"/>
+ContentControl
+Content 속성을 지닌 컨트롤
+Button, Label, Frame 등
+<ContentControl Grid.Row="1"
+                Grid.Column="1"
+                Margin="10"/>
+DataContext
+컨트롤의 계층 구조를 통해 모든 바인딩의 기초를 설정하는 것
+DataContext를 사용하면 데이터 바인딩을 할 때, 하나의 객체를 여러 개로 바인딩할 필요X
+부모 요소에 DataContext를 줘서 그 부모를 데이터 바인딩 하면 된다
+각 바인딩에 대한 소스를 수동으로 정의하는 번거로움이 줄어든다
+xmlns:viewModel="clr-namespace:ModernDesign.MVVM.ViewModel"
+
+<Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+		...
+        
+<ContentControl Grid.Row="1"
+                Grid.Column="1"
+                Margin="10"
+                Content="{Binding CurrentView}"/>
+MenuButtonTheme.xaml
+Resource
+한 번 이상 혹은 자주 사용하기를 원하는 자원
+필요할 때 재사용할 수 있도록 임시로 특정 공간에 저장됨
+CPU의 캐시된 메모리와 유사
+모든 객체는 리소스로 정의될 수 있다
+고유 키는 XAML 리소스에 지정된다
+이 키를 이용해 Static Resource 혹은 Dynamic Resource 태그를 사용하여 참조 가능
+Resource를 사용하는 이유
+재사용성
+공통 파일에서 단 한 번만 정의하고 여러 XAML에서 사용 가능
+Grid, Stackpanel 등 같은 panel 내에서 정의 가능
+사용 범위가 전역
+전체 응용프로그램인 경우 데이터를 로컬로 저장
+Static Resource
+참조 요소에 의해 한 번만 검색되며 리소스 전체 수명에 사용
+페이지를 새로 로드하는 것과 같은 런타임 동작을 기반으로 다시 검색되지 않는다
+성능적인 우위를 가진다
+Button Style="{StaticResource ResourceKey}"></Button>
+Dynamic Resource
+런타임 시 변경될 여지가 있는 리소스에 사용
+리소스가 참조될 때마다 다시 읽어오기 때문에 성능 저하 발생
+Button Style="{DynamicResource ResourceKey}"></Button>
+ResourceDictionary
+정의된 리소스, 사용 중인 리소스들을 딕셔너리에 담고 파일 별로 나누는 것
+파일을 세분화시켜 정리하기 때문에 유지보수에 용이하다
+리소스 병합
+Resource.MergedDictionaries
+여러개의 리소스 딕셔너리들을 메인 리소스 영역에 연결시키는 것
+XAML 개체 요소 사용
+{x:Type TypeName="prefix:typeNameValue"/>
+prefix: 선택 사항, 네임 스페이스 매핑용 접두사
+typeNameValue: 필수 요소, 형식 이름
+Template
+일련의 부모 자식 관계를 갖는 요소(컨트롤)들을 생성할 수 있는 정의서
+Root 요소와 그 아래 자식, 그리고 그 아래 자식 등 각각의 요소 속성을 선언하는 것
+ControlTemplate
+Control 그 자체의 외형을 정의하는 요소
+Style 작성 방법
+<Style>
+  <Setter Property="속성" Value="값">
+</Style>
+HorizontalAlignment
+
+[이미지 출처: https://wpf.2000things.com/tag/horizontalalignment/]
+TemplateBinding
+ControlTemplate을 정의할 때 부모 컨트롤의 속성을 받아들이기 위해 사용
+Binding보다 가볍다
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}" // ToggleButton 스타일 사용
+           TargetType="{x:Type RadioButton}" // 대상 타입은 RadioButton
+           x:Key="MenuButtonTheme"> // 타입명
+        <Style.Setters> // Style에 속하는 Setter 객체의 목록을 가져온다
+            <Setter Property="Template">
+                <Setter.Value>
+                    // 바인딩을 위해 타겟 타입을 지정해줘야 한다
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="{TemplateBinding Background}">
+
+			    // main window의 라디오 버튼의 문구(Content)와 바인딩
+                            <TextBlock Text="{TemplateBinding Property=Content}"
+                                       VerticalAlignment="Center"
+                                       Margin="50,0,0,0"/>
+                        </Grid>
+                        </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+	    // Setter Property 여러 개 설정 가능
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+        
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True"> // 버튼 체크 여부
+                <Setter Property="Background" Value="#22202f"/> // 색 변경
+            </Trigger>
+        </Style.Triggers>
+적용
+// MainWindow.xaml
+
+<StackPanel Grid.Row="1">
+    <RadioButton Content="Home"
+                 Height="50"
+                 Foreground="White"
+                 FontSize="14"
+                 Style="{StaticResource MenuButtonTheme}"
+                 IsChecked="True"
+                 // HomeViewCommand와 바인딩
+                 Command="{Binding HomeViewCommand}"/>
+
+// 여러 개 사용 가능
+// 하나의 StackPanel로 묶여 있어 자동으로 효과가 적용된다
+    <RadioButton Content="Discovery"
+                 Height="50"
+                 Foreground="White"
+                 FontSize="14"
+                 Style="{StaticResource MenuButtonTheme}"
+                 Command="{Binding DiscoveryViewCommand}"/>
+</StackPanel>
+App.xaml
+정의된 리소스 딕셔너리는 App.xaml 의 메인 리소스 영역에 추가하여 사용 가능
+XAML 네임스페이스
+XML 네임스페이스 개념의 확장
+C# 네임스페이스와 대응되는 개념(xmlns= = using 구문)
+태그의 중복을 막기 위해 사용
+첫번째 선언
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+전체 WPF 클라이언트/프레임워크 XAML 네임스페이스를 기본값으로 매핑
+두번째 선언
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+개별 XAML 네임스페이스를 대개 x: 접두사에 매핑
+XAML 언어 정의의 일부인 내장 항목을 지원
+WPF는 XAML을 언어로 사용
+사용자 지정 클래스 매핑
+clr-namespace
+요소로 노출되는 공용 형식을 포함하는 어셈블리 내에서 선언된 CLR 네임스페이스
+콜론(:)으로 토큰과 해당 값을 구분
+해당 클래스의 경로 지정
+DataTemplate
+데이터 개체의 시각화를 지정
+ListBox 등의 ItemsControl을 전체 컬렉션에 바인딩하는 경우에 특히 유용
+DataTemplate의 콘텐츠는 데이터 개체의 표시 구조가 된다
+<Application x:Class="ModernDesign.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ModernDesign"
+             xmlns:viewModel="clr-namespace:ModernDesign.MVVM.ViewModel"
+             xmlns:view="clr-namespace:ModernDesign.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+         
+    </Application.Resources>
+</Application>
+TextboxTheme.xaml
+x:Name
+XAML 상에서 각각의 Item들에 이름을 붙여줄 수 있는 Attribute
+코드 비하인드에서 해당 Item을 참조(사용)할 수 있는 Field를 만들어 준다
+Data Trigger
+바인딩 되는 값이 특정 값을 가질 때 프로퍼티 설정 가능
+<Grid>
+    <Rectangle StrokeThickness="1"/> // 윤곽선 두께 설정
+    <TextBox Margin="1"
+             Text="{TemplateBinding Text}"
+             BorderThickness="0"
+             Background="Transparent"
+             VerticalContentAlignment="Center"
+             Padding="5"
+             Foreground="#CFCFCF"
+             x:Name="SearchBox"/>
+             
+             // 검색창에 아무 것도 입력되지 않았을 때 기본으로 뜨는 문구
+             <TextBlock IsHitTestVisible="False" // 사용자의 클릭 입력을 무시한다
+                        Text="Search"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,0"
+                        FontSize="11"
+                        Foreground="DarkGray"
+                        Grid.Column="1">
+
+                 <TextBlock.Style>
+                     <Style TargetType="{x:Type TextBlock}">
+                         <Style.Triggers>
+                             // 아무것도 입력 안 됐을 때 보이도록 설정
+                             <DataTrigger Binding="{Binding Text, ElementName=SearchBox}" Value="">
+                                 <Setter Property="Visibility" Value="Visible"/>
+                             </DataTrigger>
+                         </Style.Triggers>
+                         // 글이 입력되면 사라진다
+                         <Setter Property="Visibility" Value="Hidden"/>
+                     </Style>
+                 </TextBlock.Style>
+              </TextBlock>
+</Grid>
+MainViewModel.cs
+ViewModel
+
+Model에 있는 데이터의 상태
+데이터를 제어하는 코드들을 가진다
+바인더(binder, 연결자)
+ViewModel에 있는 View에 연결된 속성과 View 사이의 통신을 자동화하는 역할
+Property가 변하면 View에 자동으로 반영된다
+MainViewModel 클래스
+ObservableObject를 상속
+MainViewModel 메서드
+HomeViewModel 객체 생성
+using System;
+using ModernDesign.Core;
+
+namespace ModernDesign.MVVM.ViewModel
+{
+    class MainViewModel : ObservableObject
+    {
+    	// 사용자가 컨트롤 클릭 시, ICommand 개체 공개
+    	public RelayCommand HomeViewCommand { get; set; }
+        public RelayCommand DiscoveryViewCommand { get; set; }
+        
+        public HomeViewModel HomeVM { get; set; }
+        public DiscoveryViewModel DiscoveryVM { get; set; }
+        
+        private object _currentView;
+
+	// 의존 프로퍼티
+        // 외부에서 접근 시, 프로퍼티를 통해 값을 설정하고 조회
+        // _currentView를 설정, 조회하는 방법 정의
+        public object CurrentView 
+        {
+            get { return _currentView; } // _currentView의 값을 바로 읽는다
+            set
+            {
+                // CurrentView에 설정되는 값을 바로 _currentView에 저장
+                _currentView = value;
+                OnPropertyChanged();
+            }
+        }
+        
+        // Home과 Discovery를 클릭할 때, 서로 다른 화면이 나온다
+        public MainViewModel()
+        {
+            HomeVM = new HomeViewModel();
+            DiscoveryVM = new DiscoveryViewModel();
+            
+            CurrentView = HomeVM;
+            
+            HomeViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = HomeVM;
+            });
+            
+            DiscoveryViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = DiscoveryVM;
+            });
+        }
+    }
+}
+HomeViewModel.cs
+HomeView.xaml
+UserControl
+사용자 정의 컨트롤
+특정 UI 구현을 반복하거나 이전의 프로그램 UI를 같이 사용하고 싶을 때 사용
+윈도우 전체가 아닌 일부를 구현할 때 사용
+LinearGradientBrush
+선형 그라데이션으로 영역을 그리는 방법
+두 개의 color 객체와 point 객체가 필요
+color1 객체는 point1의 위치에 칠해지고 color2 객체는 point2 위치에 칠해진다
+offset
+컨트롤의 상대 좌표
+시작 포인트에서 얼마나 떨어진 곳에 위치할 것인가를 백분위로 나타낸 것
+clip
+
+[이미지 출처: http://gushwell.ldblog.jp/archives/52315073.html]
+<Border.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+        <GradientStop Color="#3aa0ff" Offset="1"/>
+   </LinearGradientBrush>
+</Border.Background>
+
+// 사각형 모퉁이 둥글게 하기 - CornerRadius="10"와 같은 결과
+<Border.Clip>
+    <RectangleGeometry RadiusX="10"
+                       RadiusY="10"
+                       Rect="0,0,400,200"/>
+</Border.Clip>
+참고: https://www.youtube.com/watch?v=PzP8mw7JUzI&t=657s
+	
+	
+	
+	- https://velog.io/@tataki26/WPF-Modern-UI-%EC%8B%A4%EC%8A%B5
+	
+MainWindow.xaml
+결과 창을 확인하며 디자인 할 수 있는 영역
+마크업 언어(.xaml)를 사용
+윈도우(창) 설정
+<Window x:Class="MordernUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MordernUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="900" // 창 크기 설정
+        WindowStyle="None" // 윈도우 커스터마이징 가능
+        ResizeMode="NoResize"
+        Background="#181735"> // 배경색 설정
+Grid
+
+열과 행으로 테이블 형태의 레이아웃 제공
+Grid.RowDefinitions: 행
+Grid.ColumnDefinitions: 열
+<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#0F0F2D"
+              Grid.ColumnSpan="2" // 2번 인덱스의 그리드
+              MouseDown="Grid_MouseDown"> // 이벤트 핸들러
+
+            <Grid.ColumnDefinitions> // 열이 14칸으로 나누어진다
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            ......
+</Grid>
+TextBlock
+블록 단위로 문자열 출력
+블록별 커스터마이징 가능
+텍스트마다 다른 폰트 색, 배경 색, 크기 등의 다양한 속성 각기 적용 가능
+출력만 가능하고 선택 및 편집은 불가능
+WPF에 폰트 적용하기
+폰트 파일을 프로젝트 폴더 안에 넣기
+visual studio 상의 폴더 안에도 넣어준다
+FontFamily=경로/#폰트 이름
+폰트 이름은 폰트 파일 내부에 있는 이름으로 사용
+<TextBlock Text="TakiTyaki" // 출력 문구
+                       Foreground="White" // 글자 색
+                       Grid.Column="1" // 그리드 상 위치
+                       VerticalAlignment="Center" // 열 정렬
+                       HorizontalAlignment="Center" // 행 정렬
+                       FontFamily="Fonts/#Dosis" // 폰트 설정
+                       FontWeight="Medium"/>
+버튼
+
+Button Content
+버튼 색, 폰트 크기, 여백 등을 설정할 수 있다
+<Setter Property>
+엘리먼트가 처음 생성되었을 때 프로퍼티 설정
+폰트, 배경색, 커서 모양 등 설정 가능
+<Style.Triggers>
+특정 프로퍼티의 변화(특정 값을 가졌을 때)에 내부에 정의한 Setter 컬렉션 실행
+<Button.Template>
+버튼 컨트롤을 사용자가 원하는 모양으로 변경 가능하도록 도와주는 기능
+{TemplateBinding Background}
+부모 컨트롤러의 속성을 받아들인다
+Control Template을 버튼 내부에 정의할 때, 템플릿과 버튼 속성을 바인딩시키기 위해 필요
+예:) 템플릿 내의 Rectangle 요소와 버튼의 Width 맞추기
+<Button Content="Start" // 출력 문구
+                        Foreground="White"
+                        FontSize="10"
+                        FontWeight="Medium"
+                        Margin="0,0,10,0"
+                        Grid.Column="12"
+                        Grid.ColumnSpan="2">
+
+                <Button.Style>
+                    <Style TargetType="Button"> // 반드시 설정
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            // 마우스 포인터가 위치하는지 여부
+                            <Trigger Property="IsMouseOver" Value="True"> 
+                                <Setter Property="Background" Value="#FF4C70"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="8" // 가장자리 둥글게
+                                    Background="{TemplateBinding Background}"> 
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+StackPanel
+
+가로 또는 세로 방향으로 지정할 수 있는 단일 선에 따라 자식 요소를 결정하는 패널
+가로는 가로로, 세로는 세로로 쭉 정렬해주는 패널
+<StackPanel Grid.Row="1"
+                    VerticalAlignment="Center"
+                    Margin="60">
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,0,0,20">
+                    <Image Width="50" Height="50"
+                       Source="Images/rocket.png"
+                       // 이미지 스케일링 조정(확대 시) 화질 개선
+                           RenderOptions.BitmapScalingMode="Fant"/>
+                    <TextBlock Text="TakiTyaki"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                               Margin="10,0,0,0"/>
+                </StackPanel>
+출처: https://www.youtube.com/watch?v=PzP8mw7JUzI	
