@@ -1,0 +1,16 @@
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\bin\Debug\WPFCommandExam.exe.config
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\bin\Debug\WPFCommandExam.exe
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\bin\Debug\WPFCommandExam.pdb
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\MainWindow.g.cs
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\App.g.cs
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam_MarkupCompile.cache
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam_MarkupCompile.lref
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\MainWindow.baml
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam.g.resources
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam.Properties.Resources.resources
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam.csproj.GenerateResource.cache
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam.exe
+C:\jerajin_study\dotnet\WPFCommandExam\WPFCommandExam\obj\Debug\WPFCommandExam.pdb

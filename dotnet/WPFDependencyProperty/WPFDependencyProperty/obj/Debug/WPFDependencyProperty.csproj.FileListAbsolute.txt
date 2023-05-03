@@ -1,0 +1,15 @@
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\bin\Debug\WPFDependencyProperty.exe.config
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\bin\Debug\WPFDependencyProperty.exe
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\bin\Debug\WPFDependencyProperty.pdb
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\MainWindow.g.cs
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\App.g.cs
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty_MarkupCompile.cache
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty_MarkupCompile.lref
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\MainWindow.baml
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty.g.resources
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty.Properties.Resources.resources
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty.csproj.GenerateResource.cache
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty.exe
+C:\jerajin_study\dotnet\WPFDependencyProperty\WPFDependencyProperty\obj\Debug\WPFDependencyProperty.pdb

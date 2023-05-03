@@ -933,3 +933,181 @@ StackPanel
                                Margin="10,0,0,0"/>
                 </StackPanel>
 출처: https://www.youtube.com/watch?v=PzP8mw7JUzI	
+
+
+
+
+[ LOT TRANS ]
+CREATE TABLE `mes_lot_mas` (
+  LOT_ID varchar(50) not null,
+  LAST_EVENT_TIMEKEY varchar(50) not null,
+  LAST_EVENT_CD		 varchar(50) not null,
+  FAC_ID varchar(50) not null,
+  PROD_ID varchar(50) not null,
+  FLOW_ID varchar(50) not null,
+  OPER_ID varchar(50) not null,
+  EQP_ID varchar(50) not null,
+  PROD_QTY int(11),
+  LOT_STAT_CD varchar(50) not null,
+  CREATE_DATE date,
+  CREATE_USER varchar(50),
+  UPDATE_DATE date ,
+  UPDATE_USER varchar(50),
+  PRIMARY KEY (LOT_ID)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `mes_lot_his` (
+  LOT_ID 	varchar(50) not null,
+  TIMEKEY 	varchar(50) not null,
+  EVENT_CD	varchar(50) not null,
+  FAC_ID 	varchar(50) not null,
+  PROD_ID 	varchar(50) not null,
+  FLOW_ID 	varchar(50) not null,
+  OPER_ID 	varchar(50) not null,
+  EQP_ID 	varchar(50) not null,
+  PROD_QTY int(11),
+  LOT_STAT_CD varchar(50) not null,
+  OLD_PROD_ID varchar(50) not null,
+  OLD_FLOW_ID varchar(50) not null,
+  OLD_OPER_ID varchar(50) not null,
+  OLD_EQP_ID varchar(50) not null,
+  OLD_PROD_QTY int(11),
+  CREATE_DATE date,
+  CREATE_USER varchar(50),
+  UPDATE_DATE date ,
+  UPDATE_USER varchar(50),
+  PRIMARY KEY (LOT_ID, TIMEKEY)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+
+
+
+#.  C#, WPF 동영상, 의존프로퍼티(DependencyProperty), 의존속성
+	- 의존속성 값이 변경되면 자동으로 언떤 것을 로드되게 하거나 랜더링 되도록 할수 있게 하는것. 애니메이션, 스타일링, 데이터바인딩에 주로 사용
+	- 어떤 속성을 애니메이션 시켜야 하거나 데이터 바인딩을 하려면 그 속성은 반드시 의존 속성이어야한다.
+	- 기본으로 제공되는 UI 컨트롤은 대부분의 속성이 의존 속성으로 되어있다.
+
+
+#.  (C#, WPF동영상강좌)WPF이벤트라우팅(RoutedEvent), 버블링(Bubbling), 터널링(Tunneling) 이벤트
+	- 라우팅 이벤트 종류
+		버블링 : 현재 컨트롤에서 상위로 올라가면서 전달되는 경우
+		터널링 : 자식 컨트롤로 전달되는 경우	(접두사로 Preview를 붙임. PreviewMouseDown)
+			부모 이벤트가 먼저 실행되므로, 자식 이벤트 발생을 막거나 자식이벤트 처리 전에 부모 요소가 무엇인가 수행할 필요가 있는 경우에 유용하다
+		다이렉트 이벤트 : 하나의 엘리먼트에서만 발생되는 경우
+	- 이벤트 라우팅 : 어떤 이벤트가 컨트롤의 하위 또는 상위로 전달되는 것
+	- 이벤트 핸들러 메소드는 RouteEventArgs 매개변수를 가지는데 Source 속성을 통해 실제 이벤트를 발생시킨 요소에 대한 참조를 제공한다.
+	- ButtonBaseClick : 버튼계역의 모든 click 이벤트에 대한 처리 핸들러 지정
+	- 상위로 라우팅 되는 것을 막으려면 RoutedEventArgs 의 Handled 속성을 true로 설정하면된다.
+	
+#. C#,WPF 데이터바인딩(DataBinding)이란?
+	- <TextBox Name="txt1" Text="{Binding Mode=OneWay}" />
+	  <TextBox Name="txt2" Text="{Binding Source={x:Reference txt1}, Path =Text}" />
+	  txt1 에 text 를 변경하면 txt2 에 같이 변경
+	  {Binding Mode=OneWay} : txt1 -> txt2 으로만 한다는 의미 
+	  Source={x:Reference txt1} : 참조할 컨트롤을 txt1 지정
+	  Path =Text : 참조한 컨트롤의 참조할 속성
+	- 데이터 바인딩은 소스와 타겟이 필요하며, 일반적으로 소스는 데이터(ViewModel) 이고, 타겟은 컨트롤
+	- 데이터 바인딩 처리는 타겟에 한다.
+	- 모든 바인딩에는 소스 객체, 소스 속성, 타겟 객체, 타겟 속성이 있다.
+	- UI 컨트롤 객체의 소스 객체는 Binding Source 속성 또는 ViewModel 클래스인 경우 DataContext 속성으로 지정
+	- Window 에 DataContext 속성을 지정하면 하위의 컨트롤에서 해당 DataContext 에 바인딩된 객체를 사용 가능하다.
+	- 데이터 바인딩은 이밴트 핸들러는 대체할 수 있어서 C# 코드를 줄이는 역할을 한다.
+	- Window에 DataConext 속성에 객체를 할 당할 수 있는 방법
+		1) XAML 에서 정의
+		    <Window.DataContext>
+				<viewModel:MainViewModel/>
+			</Window.DataContext>
+		2) XAML Behind 코드에서 정의 (.cs)
+			this.DataContext = 객체명;
+	- txt2 에서 txt1 으로 변경하려면 타겟쪽인 txt2 에서 UpdateSourceTrigger = PropertyChanged 지정하여야한다. (대부분 의존 속성 기본값이 PropertyChanged 인 반면, Text 속성인 경우 기본값은 LostFocus 가 기본이다.)
+		<TextBox Name="txt2" Text="{Binding Source={x:Reference txt1}, Path =Text, UpdateSourceTrigger = PropertyChanged}" />
+	- <TextBox Text="{Binding Path=Text}" />
+		소스 객체를 지정하지 않은 경우 DataContext에 할당된 객체를 참조하여 해당 객체의 속성중 Text 속성을 참조한다.
+		아래와 같이 표기할 수도 있다.
+		<TextBox>
+			<TextBox.Text>
+				<Binding Path="Text" />
+			</TextBox.Text>
+		</TextBox>			
+	- 더 축약된 표현 (Path 생략 가능) : <TextBox Text="{Binding Text}" />
+	- <TextBox Text="{Binding Path=.}" />  : 소스의 속성에 바인딩하지 않고, 소스객체 자체에 바인딩하려는 경우 점을 사용
+	
+#. C#, WPF 데이터바인딩 실습 동영상, DataBinding Mode
+	- Binding 시 소스 속성 지정 방식 (컨트롤 연동)
+		1) {Binding Source={x:Reference txt1}, Path=Text}
+		2) {Binding ElementName=txt1, Path=Text}
+	- Binding 시 특정 객체 속성 참조 방법
+		1) <TextBox x:Name="txtName" Text="{Binding SelectedEmp.Ename}" /> : 객체명.속성명
+		2) DataContext 이용
+	- Binding 방법
+		1) XAML 에서 Binding 로 하는 방법
+			<Label Content={Binding ElementName=txt1, Path=Text />
+		2) Behind 코드로 Biding 하는 방법
+			Binding bind = new Binding();
+			bind.Source = txt1;
+			bind.Path = PropertyPath(TextBox.TextProperty);
+			// SetBinding의 첫번재 인자는 DependencyProperty 타입이 되어야한다.
+			// 그러므로 타겟의 속성은 의존속성의 지원을 받는 속성이 되야한다.
+			label.SetBinding(Label.ContentProperty, bind);
+	- Binding Mode
+		OneWay : 한쪽 방향
+		TwoWay : 양방향
+		OneTime : 한번만
+		OneWayToSource : 소스, 타겟의 의미가 반대되는 의미
+		
+		
+		
+#. (C#,WPF동영상)WPF 데이터바인딩 실습, INotyfyPropertChanged, PropertyChanged 이용		
+	- 소스 객체가 UI 컨트롤이 아닌 일반 클래스인 경우 클래스의 프로퍼티가 변경된 경우 타겟 객체에 알릴 수 있는 매커니즘
+	- INotyfyPropertChanged 를 상속받은 클래스에서 PropertyChangedEventHandler를 기본으로하는 PropertyChanged 이벤트를 정의하면 타겟 객체에 알릴 수 있다.
+	- 해당 프로퍼티 클래스로 모든 프로퍼티 변경 알림 처리가 가능하다.
+	class ObservableObject : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+    }
+	
+	
+	- PropertyChangedEventArgs 어느 프로퍼티에서 변경되었는지를 알리기 위한 객체
+	- [CallerMemberName] 특성 : 어느 프로퍼티 속성에서 PropertyChanged 가 발생했는지 확인 가능하게 해주는 특성 (Attribute)
+	
+	
+#. (C#,WPF동영상)WPF Command패턴, 데이터바인딩DataBinding 개요,실습
+	- 이벤트에 대해 이벤트 핸들러를 코드 비하인드에 연결하여 처리했으나, 이 방식은 이벤트 처리 핸들러를 재사용하거나 단위 테스트를 어렵게 한다.
+	- 이벤트에 대한 처리 로직 구현 방법
+		1) 이벤트 핸들러
+		2) Command 클래스 이용 
+	- MVVM 에서는 이벤트 핸들러 보다는 Command 를 이용하는 것을 권장
+	- 여러 버튼에서 하나의 Command 를 공유할 수 있어 모든 컨트롤마다 Click 이벤트를 만드는 방법 보다 효율적이다.
+	- WPF Command 는 ICommand 인터페이스를 구현한다.
+		메서드 
+			Execute     		: 실제 처리해야할 작업 기술
+			CanExecute			: Execute 를 동작하도록 할지 말지를 정의
+		이벤트
+			CanExecuteChanged : 이벤트를 동작할지 말지
+	- 	CommandManager.RequerySuggested 이벤트 발생 방법
+		1) CanExecuteChanged 이벤트 발생
+		2) CommandManager.InvalidateRequerySuggested() 직접 호출 -> CommandManager.RequerySuggested 이벤트 발생
+	- CommandManager.RequerySuggested 이벤트는 CommandManager가 명령 실행에 영향을 줄 수 있는 변경사항이 있다고 생각할 때 마다 발생한다. 발생할때 마다 CanExecute가 호출된다.
+	    public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+	
+	- CommandManager.RequerySuggested 이벤트 발생 -> CanExecute 호출 (Command 로직 실행) -> CanExecuteChanged 이벤트 발생
+	- CanExecuteChanged 이벤트는 CommandManager의 RequerySuggested에 위임되어 모든 종류의 UI상호작용을 통해 변경사항이 호출되는 정확한 알림을 제공한다.
+	- RequerySuggested 이벤트의 CommandManager.InvalidateRequerySuggested() 를 호출하여 CommandManager의 RequerySuggested 이벤트를 발생하도록 할 수도 있다.
+	- Add 버튼 비활성화 -> TextBox에 Key-In (CanExecuteChanged 이벤트 발생) -> Add 버튼 활성화 -> Add 버튼 클릭 -> TextBox에 데이터 삭제 ((CanExecuteChanged 이벤트 발생)) -> Add 버튼 비활성화
+	- Command 패턴의 주체
+		클라이언트			: 손님
+		Command Object	: 주문서
+		Command Invoker	: 웨이터
+		Command Receiver : Target, 요리사
+	- View => DataContext : ViewModel  (INotifyPropertyChanged 인터페이스 상속한 ObservableObject 클래스를 상속) => Model
