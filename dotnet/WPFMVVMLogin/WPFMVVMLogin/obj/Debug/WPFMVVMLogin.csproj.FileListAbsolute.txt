@@ -1,0 +1,17 @@
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\bin\Debug\WPFMVVMLogin.exe.config
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\bin\Debug\WPFMVVMLogin.exe
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\bin\Debug\WPFMVVMLogin.pdb
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.csproj.AssemblyReference.cache
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\MainWindow.g.cs
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\View\LoginView.g.cs
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\App.g.cs
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin_MarkupCompile.cache
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin_MarkupCompile.lref
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\MainWindow.baml
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\View\LoginView.baml
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.g.resources
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.Properties.Resources.resources
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.csproj.GenerateResource.cache
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.csproj.CoreCompileInputs.cache
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.exe
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.pdb
