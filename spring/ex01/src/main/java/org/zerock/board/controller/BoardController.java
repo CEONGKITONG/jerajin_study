@@ -1,16 +1,13 @@
 package org.zerock.board.controller;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.zerock.board.service.BoardServiceImpl;
+import org.zerock.board.service.BoardService;
 import org.zerock.board.vo.BoardVO;
 
 import lombok.extern.log4j.Log4j;
@@ -24,7 +21,8 @@ import lombok.extern.log4j.Log4j;
 public class BoardController {
 	
 	@Autowired
-	private BoardServiceImpl	service;
+	@Qualifier("boardServiceImpl")
+	private BoardService	service;
 	
 	@RequestMapping("/list.do")
 	public String list(Model model) {
