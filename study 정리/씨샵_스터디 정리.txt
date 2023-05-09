@@ -1120,7 +1120,10 @@ CREATE TABLE `mes_lot_his` (
 	
 #. WPF & MVVM/ Modern Main UI Design (Part 1/2) - Repository of Styles, Menu Buttons, Icons, Drag...
 	- https://www.youtube.com/watch?v=kxhvwGEqvcs&list=PLwG-AtjFaHdO802QyIrHRwN-StZtKlm9g&index=3
-
+	
+#. WPF & MVVM/ Modern Main UI Design (Part 2/2) - Header Design, Open & Switch Child Views
+	- https://www.youtube.com/watch?v=76JLBZJR5gE&list=PLwG-AtjFaHdO802QyIrHRwN-StZtKlm9g&index=4
+	
 	
 View - ViewModel (ViewModel / ViewModelCommand) - Model - Repository
 

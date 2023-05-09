@@ -23,3 +23,7 @@ C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\App.baml
 C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\bin\Debug\FontAwesome.Sharp.dll
 C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\Styles\ButtonStyles.baml
 C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.csproj.CopyComplete
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\View\CustomerView.g.cs
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\View\HomeView.g.cs
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\View\CustomerView.baml
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\View\HomeView.baml

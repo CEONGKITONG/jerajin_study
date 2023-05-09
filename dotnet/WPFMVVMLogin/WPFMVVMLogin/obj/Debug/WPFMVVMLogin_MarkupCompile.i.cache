@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\App.xaml
-51057035014
+7807324427
 
-17731885936
+21-1079015648
 15758480754
-CustomControls\BindablePasswordBox.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\LoginView.xaml;View\MainView.xaml;
+CustomControls\BindablePasswordBox.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\CustomerView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainView.xaml;
 
 True
 
