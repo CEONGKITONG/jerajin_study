@@ -48,6 +48,7 @@ namespace WPFMVVMLogin.ViewModel
             else
             {
                 CurrentUserAccount.DisplayName = "Invalid user, not logged in";
+                // 이렇게 해놓으면 디자인타임에 MainView.xaml을 보려고하면 팝업떠서 오류난다.
                 //MessageBox.Show("Invalid user, not logged in");
                 //Application.Current.Shutdown();
             }

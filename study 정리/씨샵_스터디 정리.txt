@@ -1111,3 +1111,29 @@ CREATE TABLE `mes_lot_his` (
 		Command Invoker	: 웨이터
 		Command Receiver : Target, 요리사
 	- View => DataContext : ViewModel  (INotifyPropertyChanged 인터페이스 상속한 ObservableObject 클래스를 상속) => Model
+	
+	
+#. WPF UI/ Design a Modern Login Form/ Introducing to WPF	
+	- https://www.youtube.com/watch?v=pZGcRHgmn8k&list=PLwG-AtjFaHdO802QyIrHRwN-StZtKlm9g
+#. Create Login in WPF, MVVM Pattern, C# and SQL Server - Step by Step + Display user data	
+	- https://www.youtube.com/watch?v=FGqj4q09NtA&list=PLwG-AtjFaHdO802QyIrHRwN-StZtKlm9g&index=2
+	
+	
+View - ViewModel (ViewModel / ViewModelCommand) - Model - Repository
+
+View		: 디자인 xaml 파일
+			: ViewModel 객체를 통해 ViewModelCommand 객체 사용
+ViewModel : View 에 필요한 데이터 가공하여 제공
+			View 에서 실행한 Command 처리
+			INotifyPropertyChanged 를 상속한 PropertyChanged 이벤트 구현
+ViewModelCommand : View에서 실행한 Command 를 처리하기 위한 공통 Method / 이벤트 정의
+					CanExecuteChanged 이벤트
+					CanExecute 메서드
+					Execute 메서드
+			
+			
+Model : 도메인 객체 (도메인 데이터를 가진 객체)
+
+Repository : Data Access 관련 객체	
+			: DB에 Access 하여 Model 객체 생성
+	
