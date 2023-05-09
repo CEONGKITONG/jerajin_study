@@ -15,3 +15,8 @@ C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.csproj.
 C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.csproj.CoreCompileInputs.cache
 C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.exe
 C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\WPFMVVMLogin.pdb
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\CustomControls\BindablePasswordBox.g.cs
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\CustomControls\BindablePasswordBox.baml
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\View\MainView.g.cs
+C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\obj\Debug\View\MainView.baml

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\jerajin_study\dotnet\WPFMVVMLogin\WPFMVVMLogin\App.xaml
-2-268177722
+4-473390617
 
-6861700954
+17-1809862316
 13-1505183044
-MainWindow.xaml;View\LoginView.xaml;
+CustomControls\BindablePasswordBox.xaml;MainWindow.xaml;View\LoginView.xaml;View\MainView.xaml;
 
 False
 
